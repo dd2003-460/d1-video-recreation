@@ -1,0 +1,27 @@
+{
+  "name": "d1-video-recreation",
+  "version": "1.0.0",
+  "description": "像素风视频制作项目 — 对标 bilibili 参考视频，用 Node+canvas 渲染 720p 帧序列 → ffmpeg 合成。",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dd2003-460/d1-video-recreation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dd2003-460/d1-video-recreation/issues"
+  },
+  "homepage": "https://github.com/dd2003-460/d1-video-recreation#readme",
+  "dependencies": {
+    "@napi-rs/canvas": "^1.0.13"
+  }
+}
