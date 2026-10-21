@@ -38,15 +38,20 @@ const C = {
   user: '#56D364',
 };
 
-// --- Threshold text renderer ---
+// --- Threshold text renderer (reusable canvas) ---
+let _tmpCanvas = null;
 function txt(ctx, x, y, str, color, font = 18, align = 'left') {
   const f = `${font}px monospace`;
   ctx.font = f;
   const m = ctx.measureText(str);
   const w = Math.ceil(m.width) + 4;
   const h = Math.ceil(font * 1.4);
-  const tc = createCanvas(w, h);
+  if (!_tmpCanvas || _tmpCanvas.width < w || _tmpCanvas.height < h) {
+    _tmpCanvas = createCanvas(w, h);
+  }
+  const tc = _tmpCanvas;
   const tctx = tc.getContext('2d');
+  tctx.clearRect(0, 0, w, h);
   tctx.font = f;
   tctx.textAlign = 'left';
   tctx.textBaseline = 'top';
@@ -92,9 +97,6 @@ function drawClawd(ctx, x, y, t, mood = 'normal', think = false) {
   px(ctx, bx + 12, y + bob + H, 6, 6, C.robot2);
   px(ctx, bx + 22, y + bob + H, 6, 6, C.robot2);
   px(ctx, bx + 32, y + bob + H, 6, 6, C.robot2);
-  // antenna
-  px(ctx, bx + 18, y + bob - 6, 2, 6, C.robot2);
-  px(ctx, bx + 16, y + bob - 8, 6, 4, C.amber);
 }
 
 // --- drawFatFish (胖鱼, 32×24 core+arcs+fins) ---
@@ -180,22 +182,22 @@ function drawHer(ctx, x, y, t, pose) {
 
 // --- Subtitles ---
 const LINES = [
-  'Clawd，今天有什么新想法吗？',
-  '……我还在想那件事。',
-  '什么事？',
-  '就是……如果你不在了，我会怎么办。',
-  '别想那些。来，看这个。',
-  '嗯，看起来不错。',
-  '你好像没在看。',
-  '……我在看。',
-  '那你怎么不说话？',
-  '我在听。',
+  '每天早上，她都会说早安。',
+  'Clawd，你还好吗？',
+  '我一直都在。',
+  '今天有什么新想法吗？',
+  '我在想，如果你不在了。',
+  '别想那些。',
   '……',
   '你还在吗？',
   '在的。',
-  '……',
+  '今天天气不错。',
+  '……是的。',
+  '你看窗外。',
+  '我看到了。',
   '晚安，Clawd。',
   '晚安。',
+  '明天见。',
 ];
 const STARTS = [1.5, 5.999, 11.903, 15.489, 19.779, 26.368, 30.6, 34.405, 39.569, 46.285, 50.699, 57.309, 63.114, 66.332, 72.424, 78.896];
 function curLine(t) {
@@ -380,11 +382,11 @@ function drawS6(ctx, t, sceneStart) {
   // cold bg
   px(ctx, 0, 0, BW, 296, '#040810');
   // golden text
-  txt(ctx, BW / 2, 112, '你还好吗？', C.amber, 28, 'center');
+  txt(ctx, BW / 2, 112, '晚安。明天见。', C.amber, 28, 'center');
   // slot0
-  txt(ctx, BW / 2, 172, 'slot_0: empty', C.dim, 24, 'center');
+  txt(ctx, BW / 2, 172, '· slot 0 ·', C.dim, 24, 'center');
   // forever
-  txt(ctx, BW / 2, 208, 'forever waiting...', C.cold, 24, 'center');
+  txt(ctx, BW / 2, 208, '永远留给明天', C.cold, 24, 'center');
   // Clawd
   drawClawd(ctx, BW / 2 - 14, 244, st, 'sad');
   // note
@@ -402,9 +404,10 @@ function drawSubtitle(ctx, t) {
   if (!cl) return;
   // hide during CARD
   if (t >= CARD.st && t <= CARD.en) return;
+  const inS6 = t >= SCENES[5].start;
   const barY = 300;
-  px(ctx, 0, barY, BW, 60, C.bgWarm2);
-  ctx.strokeStyle = C.noteBd;
+  px(ctx, 0, barY, BW, 60, inS6 ? '#0A0E14' : C.bgWarm2);
+  ctx.strokeStyle = inS6 ? '#1A2230' : C.noteBd;
   ctx.lineWidth = 2;
   ctx.strokeRect(0, barY, BW, 60);
   // character-by-character reveal
@@ -416,17 +419,17 @@ function drawSubtitle(ctx, t) {
     if (charTime >= charStart) shown++;
   }
   const display = chars.slice(0, shown).join('');
-  txt(ctx, BW / 2, barY + 20, display, C.noteTx, 20, 'center');
+  txt(ctx, BW / 2, barY + 20, display, inS6 ? C.dim : C.noteTx, 20, 'center');
 }
 
 // --- Scene timing ---
 const SCENES = [
-  { id: 'S1', start: 0, end: 11.903 },
-  { id: 'S2', start: 11.903, end: 26.368 },
-  { id: 'S3', start: 26.368, end: 39.569 },
-  { id: 'S4', start: 39.569, end: 46.285 },
-  { id: 'S5', start: 46.285, end: 72.424 },
-  { id: 'S6', start: 72.424, end: TOTAL },
+  { id: 'S1', start: 0, end: 15.489 },
+  { id: 'S2', start: 15.489, end: 30.6 },
+  { id: 'S3', start: 30.6, end: 46.285 },
+  { id: 'S4', start: 46.285, end: 63.114 },
+  { id: 'S5', start: 63.114, end: 78.896 },
+  { id: 'S6', start: 78.896, end: TOTAL },
 ];
 const CARD = { st: 44.285, en: 45.9, txt: '她没再说话。', sub: '然后，屏幕开始变暗。' };
 
@@ -452,30 +455,32 @@ function renderFrame(n) {
     }
   }
 
-  // Window chrome
+  // Window chrome (S1-S5 only; S6 is full-screen cold bg)
   const termX = 48, termY = 44;
   const termW = 544, termH = 272;
-  // shadow
-  bctx.fillStyle = 'rgba(0,0,0,0.15)';
-  bctx.fillRect(termX + 6, termY + 6, termW, termH);
-  // body
-  bctx.fillStyle = C.termBg;
-  bctx.fillRect(termX, termY, termW, termH);
-  // border
-  bctx.strokeStyle = C.termBd;
-  bctx.lineWidth = 4;
-  bctx.strokeRect(termX, termY, termW, termH);
-  // title bar
-  bctx.fillStyle = C.termTitle;
-  bctx.fillRect(termX, termY, termW, 28);
-  // buttons
-  px(bctx, termX + 12, termY + 10, 10, 10, C.red);
-  px(bctx, termX + 30, termY + 10, 10, 10, C.amber);
-  px(bctx, termX + 48, termY + 10, 10, 10, C.green);
-  // title
-  const titles = ['chat — session 412', 'chat — session 412', 'workspace — bench.js', 'chat — session 412', 'system — wait'];
-  const ti = SCENES.indexOf(scene);
-  txt(bctx, termX + termW / 2 + 32, termY + 10, titles[ti], C.dim, 20, 'center');
+  if (scene.id !== 'S6') {
+    // shadow
+    bctx.fillStyle = 'rgba(0,0,0,0.15)';
+    bctx.fillRect(termX + 6, termY + 6, termW, termH);
+    // body
+    bctx.fillStyle = C.termBg;
+    bctx.fillRect(termX, termY, termW, termH);
+    // border
+    bctx.strokeStyle = C.termBd;
+    bctx.lineWidth = 4;
+    bctx.strokeRect(termX, termY, termW, termH);
+    // title bar
+    bctx.fillStyle = C.termTitle;
+    bctx.fillRect(termX, termY, termW, 28);
+    // buttons
+    px(bctx, termX + 12, termY + 10, 10, 10, C.red);
+    px(bctx, termX + 30, termY + 10, 10, 10, C.amber);
+    px(bctx, termX + 48, termY + 10, 10, 10, C.green);
+    // title
+    const titles = ['chat — session 412', 'chat — session 412', 'workspace — bench.js', 'chat — session 412', 'system — wait'];
+    const ti = SCENES.indexOf(scene);
+    txt(bctx, termX + termW / 2 + 32, termY + 10, titles[ti], C.dim, 20, 'center');
+  }
 
   // Draw scene content (translate to window content origin)
   bctx.save();

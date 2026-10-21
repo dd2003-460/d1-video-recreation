@@ -25,7 +25,7 @@ function overlap(a, b) {
   const y1 = Math.max(a[1], b[1]);
   const x2 = Math.min(a[0] + a[2], b[0] + b[2]);
   const y2 = Math.min(a[1] + a[3], b[1] + b[3]);
-  return x2 - x1 > 2 && y2 - y1 > 2; // 2px tolerance
+  return x2 - x1 > 0 && y2 - y1 > 0; // strict overlap
 }
 
 function interArea(a, b) {
@@ -67,7 +67,7 @@ function checkScene(name, boxes, contentBounds) {
   }
 }
 
-const CB = { x: TX, y: TY, w: 544, h: 292 }; // content bounds in canvas-global coords (TX=48, TY=72)
+const CB = { x: TX, y: TY, w: 544, h: 244 }; // content bounds: termH(272) - titleBar(28) = 244
 
 console.log('=== v1.3 Layout Check (640×360) ===\n');
 
