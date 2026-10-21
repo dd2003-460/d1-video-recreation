@@ -118,9 +118,15 @@ await task.finish({ keep: ['p1'] })  // 保留页面让用户看
 - **SOP 是桥梁**: 你的 SOP 文件就是 arena 的"说明书"，写得越清楚，arena 做得越准
 - **迭代**: 第一次不一定完美，在 arena 里多轮迭代
 - **验证**: arena 做完后必须本地验证（check_overlap + 人工审核）
+- **⚠️ Arena 不能 push 回原仓库** (v1.3.1 教训): arena sandbox 的 git auth 绑定到自己的仓库，无法 push 到 d1-video-recreation。arena 只能在本地工作，结果需要本地手动应用
+- **⚠️ Arena 会改写全局数据** (v1.3.1 教训): arena 在修 bug 时可能重写 LINES/SCENES 等全局数组，导致音频失同步。prompt 必须明确"不要修改 LINES/STARTS/SCENES"
+- **⚠️ React SPA 限制** (v1.3.1 教训): arena 页面是 React SPA，body 文本不会实时更新新内容。ego-browser 的 `document.body.innerText` 可能显示旧内容。用 `p1.snapshot()` 而非 body 文本
 
-## 六、当前项目状态 (2026-10-21)
+## 六、当前项目状态 (v1.3.1 已完成)
 
-- 仓库: `dd2003-460/d1-video-recreation`
-- 当前版本: v1.2 (86.5s, 1280×720@60fps)
-- 下一步: arena agent mode 执行 v1.3 优化（像素清晰度提升）
+- 仓库: `dd2003-460/d1-video-recreation` (commit 77838c7)
+- 当前版本: v1.3.1 (86.48s, 1280×720@60fps, 像素块 4-6px)
+- v1.3.1 修复: S6 无窗口框, Clawd 无天线, CB.h=244, 严格重叠, txt() 性能, S6 冷色字幕
+- 音频: `audio/final_mix_v1.1.wav` (86.48s, 无人声)
+- 输出: `outputs/full_v1.3.mp4` (2.8MB, h264+aac)
+- 验收: check_overlap 8/8 + arena 自审核 (9 问题已修复)
