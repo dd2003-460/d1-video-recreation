@@ -1,0 +1,28 @@
+# Output videos (large, regenerated)
+*.mp4
+*.mov
+*.avi
+
+# Frame sequences (large, regenerated) — but keep reference frames in docs/refs/
+outputs/frames_*/
+!docs/refs/
+
+# Node modules
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ttsenv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temp
+*.tmp
+*.bak
