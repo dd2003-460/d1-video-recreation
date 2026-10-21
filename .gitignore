@@ -26,3 +26,5 @@ Thumbs.db
 # Temp
 *.tmp
 *.bak
+frames/
+d1-review-frames.js
