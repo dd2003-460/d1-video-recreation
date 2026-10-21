@@ -77,8 +77,8 @@ checkScene('S1', [
   { name: 'term1', box: [W(10), WL(48), 400, 12] },
   { name: 'term2', box: [W(10), WL(84), 400, 12] },
   { name: 'term3', box: [W(10), WL(120), 400, 12] },
-  { name: 'date', box: [W(10), WL(140), 280, 10] },
-  { name: 'pinned', box: [W(10), WL(168), 180, 10] },
+  { name: 'date', box: [W(10), WL(172), 280, 10] },
+  { name: 'pinned', box: [W(10), WL(204), 180, 10] },
   { name: 'clawd', box: clawdBox(W(472), WL(156)) },
 ], CB);
 
@@ -98,13 +98,12 @@ checkScene('S2', [
 console.log('S3: 代码');
 checkScene('S3', [
   { name: 'code1', box: [W(30), WL(16), 280, 10] },
-  { name: 'code2', box: [W(30), WL(38), 280, 10] },
-  { name: 'code3', box: [W(30), WL(60), 280, 10] },
-  { name: 'code4', box: [W(30), WL(82), 280, 10] },
-  { name: 'code5', box: [W(30), WL(104), 280, 10] },
-  { name: 'code6', box: [W(30), WL(126), 280, 10] },
-  { name: 'code7', box: [W(30), WL(148), 280, 10] },
-  { name: 'code8', box: [W(30), WL(170), 280, 10] },
+  { name: 'code2', box: [W(30), WL(48), 280, 10] },
+  { name: 'code3', box: [W(30), WL(80), 280, 10] },
+  { name: 'code4', box: [W(30), WL(112), 280, 10] },
+  { name: 'code5', box: [W(30), WL(144), 280, 10] },
+  { name: 'code6', box: [W(30), WL(176), 280, 10] },
+  { name: 'code7', box: [W(30), WL(208), 280, 10] },
   { name: 'slotLabel', box: [W(372), WL(144), 168, 10] },
   { name: 'slotBars', box: [W(360), WL(164), 24, 80] },
   { name: 'clawd', box: clawdBox(W(472), WL(176)) },

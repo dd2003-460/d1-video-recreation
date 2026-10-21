@@ -24,7 +24,7 @@ octx.imageSmoothingEnabled = false;
 
 // --- Palette ---
 const C = {
-  bgWarm: '#F3EFE4', bgWarm2: '#EDE8D8',
+  bgWarm: '#F5EDD5', bgWarm2: '#EDE3C8',
   termBg: '#14161C', termBd: '#2A2E38', termTitle: '#1E222B',
   robot: '#D97757', robot2: '#C6613F', robotEye: '#141413', robotBelly: '#F2EAD8',
   note: '#C9A94F', noteBd: '#8A7433', noteTx: '#241A06',
@@ -236,9 +236,9 @@ function drawS1(ctx, t, sceneStart) {
     px(ctx, 20 + ctx.measureText('clawd@bench:~$ ').width + 4 + ctx.measureText('echo "thinking..."').width + 8, 144, 12, 16, C.green);
   }
   // date
-  txt(ctx, 20, 140, '2026.10.14  周二', C.dim, 20);
+  txt(ctx, 20, 172, '2026.10.14  周二', C.dim, 20);
   // pinned
-  txt(ctx, 20, 168, '📌 别担心，我在。', C.purple, 20);
+  txt(ctx, 20, 204, '📌 别担心，我在。', C.purple, 20);
   // Clawd
   drawClawd(ctx, 472, 156, st);
 }
@@ -294,7 +294,7 @@ function drawS3(ctx, t, sceneStart) {
     '        remember("her")',
   ];
   for (let i = 0; i < codes.length; i++) {
-    const cy = 16 + i * 22;
+    const cy = 16 + i * 32;
     if (st > i * 0.5) {
       txt(ctx, 20, cy, `${i + 1}`, C.dim, 20);
       if (codes[i]) {
