@@ -28,3 +28,5 @@ Thumbs.db
 *.bak
 frames/
 d1-review-frames.js
+src/frames_upgrade/
+src/frames_learning/
