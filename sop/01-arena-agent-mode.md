@@ -139,7 +139,8 @@ await task.finish({ keep: ['p1'] })  // 保留页面让用户看
 | full | v1.3.4 | 86.48s | arena 外包 | 8/8 PASSED | ✅ |
 | goodmorning | arena v1.0 | 30s | arena 外包 | 13/13 PASSED | ✅ |
 | goodmorning | 本地 v1.1 | 30s | 本地制作 | 未检测 | ❌ 不达标 |
-| fear | v1.0 | 30s | 本地制作 | F1 有重叠 | ❌ 待修 |
+| fear | v1.1 | 30s | 本地制作 | 3/3 PASSED | ✅ |
+| memory | v1.0 | 30s | 本地制作 | 3/3 PASSED | ✅ |
 
 - 仓库: `dd2003-460/d1-video-recreation` (commit ac8a2bd)
 - arena 仓库: `dd2003-460/prompt-first-bench` (branch: arena/57893324-prompt-first-bench)
