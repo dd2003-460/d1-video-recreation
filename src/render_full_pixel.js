@@ -46,10 +46,11 @@ function txt(ctx, x, y, str, color, font = 18, align = 'left') {
   const m = ctx.measureText(str);
   const w = Math.ceil(m.width) + 4;
   const h = Math.ceil(font * 1.4);
-  if (!_tmpCanvas || _tmpCanvas.width < w || _tmpCanvas.height < h) {
-    _tmpCanvas = createCanvas(w, h);
-  }
+  if (!_tmpCanvas) _tmpCanvas = createCanvas(1, 1);
   const tc = _tmpCanvas;
+  if (tc.width !== w || tc.height !== h) {
+    tc.width = w; tc.height = h; // resize clears canvas
+  }
   const tctx = tc.getContext('2d');
   tctx.clearRect(0, 0, w, h);
   tctx.font = f;
