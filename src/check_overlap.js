@@ -1,7 +1,8 @@
-// v1.3: 640×360 layout checker — overlap + truncation
-// Window content origin: TX=48, TY=72 (termY=44 + title bar 28)
+// v1.3.4: 640×360 layout checker — overlap + truncation
+// Terminal: termX=140, termY=160, termW=360, termH=160, titleBar=20
+// Content origin: TX=140, TY=180
 const BW = 640, BH = 360;
-const TX = 48, TY = 72;
+const TX = 140, TY = 180;
 
 function W(lx, ly) { return lx + TX; }
 function WL(ly) { return ly + TY; }
@@ -25,7 +26,7 @@ function overlap(a, b) {
   const y1 = Math.max(a[1], b[1]);
   const x2 = Math.min(a[0] + a[2], b[0] + b[2]);
   const y2 = Math.min(a[1] + a[3], b[1] + b[3]);
-  return x2 - x1 > 0 && y2 - y1 > 0; // strict overlap
+  return x2 - x1 > 0 && y2 - y1 > 0;
 }
 
 function interArea(a, b) {
@@ -67,84 +68,82 @@ function checkScene(name, boxes, contentBounds) {
   }
 }
 
-const CB = { x: TX, y: TY, w: 544, h: 244 }; // content bounds: termH(272) - titleBar(28) = 244
+const CB = { x: TX, y: TY, w: 360, h: 140 }; // terminal content: termW=360, termH(160)-titleBar(20)=140
 
-console.log('=== v1.3 Layout Check (640×360) ===\n');
+console.log('=== v1.3.4 Layout Check (640×360) ===\n');
 
 // S1
 console.log('S1: 开场');
 checkScene('S1', [
-  { name: 'term1', box: [W(10), WL(48), 400, 12] },
-  { name: 'term2', box: [W(10), WL(84), 400, 12] },
-  { name: 'term3', box: [W(10), WL(120), 400, 12] },
-  { name: 'date', box: [W(10), WL(172), 280, 10] },
-  { name: 'pinned', box: [W(10), WL(204), 180, 10] },
-  { name: 'clawd', box: clawdBox(W(472), WL(156)) },
+  { name: 'term1', box: [W(12), WL(24), 200, 14] },
+  { name: 'term2', box: [W(12), WL(44), 100, 14] },
+  { name: 'term3', box: [W(12), WL(64), 240, 14] },
+  { name: 'cursor', box: [W(12), WL(84), 8, 10] },
+  { name: 'date', box: [W(12), WL(96), 180, 12] },
+  { name: 'pinned', box: [W(12), WL(114), 200, 12] },
+  { name: 'clawd', box: clawdBox(W(300), WL(108)) },
 ], CB);
 
 // S2
 console.log('S2: 消息流');
 checkScene('S2', [
-  { name: 'msg1', box: [W(8), WL(32), 420, 14] },
-  { name: 'msg2', box: [W(8), WL(68), 420, 14] },
-  { name: 'msg3', box: [W(8), WL(104), 420, 14] },
-  { name: 'note', box: noteBox(W(448), WL(8)) },
-  { name: 'her', box: herBox(W(4), WL(152)) },
-  { name: 'inputBar', box: [W(8), WL(184), 512, 8] },
-  { name: 'clawd', box: clawdBox(W(464), WL(152)) },
+  { name: 'msg1', box: [W(12), WL(14), 336, 20] },
+  { name: 'msg2', box: [W(12), WL(38), 336, 20] },
+  { name: 'msg3', box: [W(12), WL(62), 336, 20] },
+  { name: 'inputBar', box: [W(12), WL(120), 336, 12] },
 ], CB);
 
 // S3
 console.log('S3: 代码');
 checkScene('S3', [
-  { name: 'code1', box: [W(30), WL(16), 280, 10] },
-  { name: 'code2', box: [W(30), WL(48), 280, 10] },
-  { name: 'code3', box: [W(30), WL(80), 280, 10] },
-  { name: 'code4', box: [W(30), WL(112), 280, 10] },
-  { name: 'code5', box: [W(30), WL(144), 280, 10] },
-  { name: 'code6', box: [W(30), WL(176), 280, 10] },
-  { name: 'code7', box: [W(30), WL(208), 280, 10] },
-  { name: 'slotLabel', box: [W(372), WL(144), 168, 10] },
-  { name: 'slotBars', box: [W(360), WL(164), 24, 80] },
-  { name: 'clawd', box: clawdBox(W(472), WL(176)) },
+  { name: 'code1', box: [W(12), WL(12), 240, 12] },
+  { name: 'code2', box: [W(12), WL(28), 240, 12] },
+  { name: 'code3', box: [W(12), WL(44), 240, 12] },
+  { name: 'code4', box: [W(12), WL(60), 240, 12] },
+  { name: 'code5', box: [W(12), WL(76), 240, 12] },
+  { name: 'code6', box: [W(12), WL(92), 240, 12] },
+  { name: 'code7', box: [W(12), WL(108), 240, 12] },
+  { name: 'code8', box: [W(12), WL(124), 240, 12] },
+  { name: 'slotLabel', box: [W(260), WL(32), 100, 12] },
+  { name: 'slotBars', box: [W(280), WL(60), 16, 80] },
+  { name: 'clawd', box: clawdBox(W(280), WL(4)) },
 ], CB);
 
 // S4
 console.log('S4: 空槽');
 checkScene('S4', [
-  { name: 'pinnedBar', box: [W(16), WL(16), 420, 28] },
-  { name: 'emptyLines', box: [W(20), WL(60), 440, 96] },
-  { name: 'time0900', box: [W(24), WL(92), 140, 20], exempt: ['emptyLines'] },
-  { name: 'battery', box: [W(20), WL(184), 120, 10] },
-  { name: 'slot0', box: [W(420), WL(184), 60, 16] },
-  { name: 'clawd', box: clawdBox(W(464), WL(156)) },
+  { name: 'pinnedBar', box: [W(12), WL(8), 336, 20] },
+  { name: 'emptyLines', box: [W(16), WL(36), 328, 60] },
+  { name: 'time0900', box: [W(20), WL(40), 140, 12], exempt: ['emptyLines'] },
+  { name: 'battery', box: [W(16), WL(120), 120, 12] },
+  { name: 'slot0', box: [W(280), WL(120), 40, 12] },
 ], CB);
 
 // S5
 console.log('S5: 等待');
 checkScene('S5', [
-  { name: 'waiting', box: [W(10), WL(24), 300, 12] },
-  { name: 'tokens', box: [W(10), WL(64), 180, 10] },
-  { name: 'compress', box: [W(10), WL(92), 260, 10] },
-  { name: 'rePin', box: [W(10), WL(112), 280, 10] },
-  { name: 'waitLog', box: [W(10), WL(152), 300, 24] },
-  { name: 'fatFish', box: fatFishBox(W(452), WL(80)) },
+  { name: 'waiting', box: [W(12), WL(12), 120, 14] },
+  { name: 'tokens', box: [W(12), WL(36), 240, 12] },
+  { name: 'compress', box: [W(12), WL(56), 160, 12] },
+  { name: 'rePin', box: [W(12), WL(68), 120, 12] },
+  { name: 'waitLog', box: [W(12), WL(96), 240, 24] },
+  { name: 'fatFish', box: fatFishBox(W(280), WL(40)) },
 ], CB);
 
-// S6 (no window transform)
+// S6 (no window transform, full screen)
 console.log('S6: 冷色结尾');
 checkScene('S6', [
-  { name: 'golden', box: textLine(BW / 2, 112, 8, 28, 'center') },
-  { name: 'slot0', box: textLine(BW / 2, 172, 9, 24, 'center') },
-  { name: 'forever', box: textLine(BW / 2, 208, 16, 24, 'center') },
-  { name: 'clawd', box: clawdBox(BW / 2 - 14, 244) },
-  { name: 'note', box: noteBox(56, 172) },
-  { name: 'her', box: herBox(528, 172) },
-], { x: 0, y: 0, w: BW, h: 296 });
+  { name: 'golden', box: textLine(BW / 2, 100, 8, 20, 'center') },
+  { name: 'slot0', box: textLine(BW / 2, 152, 9, 16, 'center') },
+  { name: 'forever', box: textLine(BW / 2, 180, 16, 16, 'center') },
+  { name: 'clawd', box: clawdBox(BW / 2 - 14, 220) },
+  { name: 'note', box: noteBox(48, 160) },
+  { name: 'her', box: herBox(540, 160) },
+], { x: 0, y: 0, w: BW, h: BH });
 
 // CARD
 console.log('CARD: 便签');
-const cardX = 240, cardY = 360 - 100 - 60;
+const cardX = 240, cardY = BH - 100 - 60;
 checkScene('CARD', [
   { name: 'card', box: [cardX, cardY, 360, 100] },
 ], { x: 0, y: 0, w: BW, h: BH });
@@ -152,7 +151,7 @@ checkScene('CARD', [
 // SUB
 console.log('SUB: 字幕');
 checkScene('SUB', [
-  { name: 'subtitleBar', box: [0, 300, BW, 60] },
+  { name: 'subtitleBar', box: [0, 320, BW, 40] },
 ], { x: 0, y: 0, w: BW, h: BH });
 
 console.log(`\n=== Total: ${totalOverlaps} issue(s) ===`);

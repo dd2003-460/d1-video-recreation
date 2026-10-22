@@ -79,6 +79,61 @@ function easeInOut(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2)
 function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
 function clamp01(t) { return Math.max(0, Math.min(1, t)); }
 
+// --- Background: striped wallpaper + large window (S1-S5) ---
+function drawBackground(ctx, st, isS6) {
+  // warm striped wallpaper
+  ctx.fillStyle = '#F5EDD5';
+  ctx.fillRect(0, 0, BW, BH);
+  ctx.fillStyle = 'rgba(0,0,0,0.03)';
+  for (let x = 0; x < BW; x += 16) ctx.fillRect(x, 0, 8, BH);
+
+  if (isS6) return; // S6: no window, cold bg drawn separately
+
+  // window: x=60, y=20, w=520, h=160
+  const wx = 60, wy = 20, ww = 520, wh = 160, fw = 8;
+  // frame
+  ctx.fillStyle = '#8B7355';
+  ctx.fillRect(wx, wy, ww, wh);
+  // sky gradient
+  const grd = ctx.createLinearGradient(0, wy + fw, 0, wy + wh - fw);
+  grd.addColorStop(0, '#87CEEB');
+  grd.addColorStop(1, '#E0F0FF');
+  ctx.fillStyle = grd;
+  ctx.fillRect(wx + fw, wy + fw, ww - 2 * fw, wh - 2 * fw);
+  // mountains
+  ctx.fillStyle = '#5A7A5A';
+  ctx.beginPath();
+  ctx.moveTo(wx + fw, wy + wh - fw);
+  ctx.lineTo(wx + 120, wy + 70);
+  ctx.lineTo(wx + 200, wy + wh - fw);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.moveTo(wx + 150, wy + wh - fw);
+  ctx.lineTo(wx + 300, wy + 50);
+  ctx.lineTo(wx + 420, wy + wh - fw);
+  ctx.fill();
+  // clouds
+  ctx.fillStyle = 'rgba(255,255,255,0.9)';
+  const cx1 = wx + 100 + Math.sin(st * 0.3) * 8;
+  ctx.fillRect(cx1, wy + 36, 40, 10);
+  ctx.fillRect(cx1 + 8, wy + 30, 24, 8);
+  const cx2 = wx + 320 + Math.cos(st * 0.2) * 12;
+  ctx.fillRect(cx2, wy + 52, 50, 10);
+  ctx.fillRect(cx2 + 10, wy + 46, 30, 8);
+  // cross mullion
+  ctx.fillStyle = '#8B7355';
+  ctx.fillRect(wx + ww / 2 - 3, wy + fw, 6, wh - 2 * fw);
+  ctx.fillRect(wx + fw, wy + wh / 2 - 3, ww - 2 * fw, 6);
+  // windowsill
+  ctx.fillStyle = '#A08060';
+  ctx.fillRect(wx - 4, wy + wh, ww + 8, 8);
+  // plant on sill
+  ctx.fillStyle = '#5A7A5A';
+  ctx.fillRect(wx + 30, wy + wh - 12, 10, 12);
+  ctx.fillStyle = '#7A5A3A';
+  ctx.fillRect(wx + 28, wy + wh - 2, 14, 6);
+}
+
 // --- drawClawd (Clawd 机器人, 40×22 body+legs) ---
 function drawClawd(ctx, x, y, t, mood = 'normal', think = false) {
   const bob = Math.sin(t * 2.2) > 0.35 ? -2 : 0;
@@ -210,13 +265,13 @@ function curLine(t) {
 
 // --- Scene draw functions (content area y 0..292, subtitle area y 300..360) ---
 
-// S1: 开场 — 终端 + 对话
+// S1: 开场 — 终端 + 对话 (terminal 360×140 content)
 function drawS1(ctx, t, sceneStart) {
   const st = t - sceneStart;
   // scanlines
   ctx.fillStyle = 'rgba(255,255,255,0.03)';
-  for (let y = -6; y < 208; y += 3) {
-    ctx.fillRect(0, y, 544, 1);
+  for (let y = 0; y < 140; y += 3) {
+    ctx.fillRect(0, y, 360, 1);
   }
   // terminal lines
   const lines = [
@@ -225,26 +280,26 @@ function drawS1(ctx, t, sceneStart) {
     ['clawd@bench:~$ ', C.green, 'echo "thinking..."', C.text],
   ];
   for (let i = 0; i < lines.length; i++) {
-    const ty = 48 + i * 36;
+    const ty = 24 + i * 20;
     if (st > i * 0.8) {
-      txt(ctx, 20, ty, lines[i][0], lines[i][1], 24);
+      txt(ctx, 12, ty, lines[i][0], lines[i][1], 14);
       const w0 = ctx.measureText(lines[i][0]).width;
-      txt(ctx, 20 + w0 + 4, ty, lines[i][2], lines[i][3], 24);
+      txt(ctx, 12 + w0 + 4, ty, lines[i][2], lines[i][3], 14);
     }
   }
   // cursor
   if (Math.floor(st * 2) % 2 === 0) {
-    px(ctx, 20 + ctx.measureText('clawd@bench:~$ ').width + 4 + ctx.measureText('echo "thinking..."').width + 8, 144, 12, 16, C.green);
+    px(ctx, 12 + ctx.measureText('clawd@bench:~$ ').width + 4 + ctx.measureText('echo "thinking..."').width + 8, 84, 8, 10, C.green);
   }
   // date
-  txt(ctx, 20, 172, '2026.10.14  周二', C.dim, 20);
+  txt(ctx, 12, 96, '2026.10.14  周二', C.dim, 12);
   // pinned
-  txt(ctx, 20, 204, '📌 别担心，我在。', C.purple, 20);
+  txt(ctx, 12, 114, '📌 别担心，我在。', C.purple, 12);
   // Clawd
-  drawClawd(ctx, 472, 156, st);
+  drawClawd(ctx, 300, 108, st);
 }
 
-// S2: 消息流
+// S2: 消息流 (terminal 360×140 content)
 function drawS2(ctx, t, sceneStart) {
   const st = t - sceneStart;
   const msgs = [
@@ -253,37 +308,31 @@ function drawS2(ctx, t, sceneStart) {
     ['Clawd', '如果你不在了……', C.text, C.user],
   ];
   for (let i = 0; i < msgs.length; i++) {
-    const my = 32 + i * 36;
+    const my = 16 + i * 24;
     if (st > i * 1.5) {
       // pin box
-      px(ctx, 16, my - 4, 420, 28, '#2A1F3D');
+      px(ctx, 12, my - 2, 336, 20, '#2A1F3D');
       ctx.strokeStyle = C.purple2;
-      ctx.lineWidth = 2;
-      ctx.strokeRect(16, my - 4, 420, 28);
+      ctx.lineWidth = 1;
+      ctx.strokeRect(12, my - 2, 336, 20);
       // sender
-      txt(ctx, 24, my, msgs[i][0] + ':', msgs[i][3], 20);
+      txt(ctx, 18, my, msgs[i][0] + ':', msgs[i][3], 12);
       const w0 = ctx.measureText(msgs[i][0] + ': ').width;
-      txt(ctx, 24 + w0 + 4, my, msgs[i][1], msgs[i][2], 20);
+      txt(ctx, 18 + w0 + 4, my, msgs[i][1], msgs[i][2], 12);
     }
   }
-  // note
-  drawNote(ctx, 448, 8, st, '思考中');
-  // her
-  drawHer(ctx, 8, 152, st, 'wave');
   // input bar
-  px(ctx, 16, 184, 512, 16, C.panel);
+  px(ctx, 12, 120, 336, 12, C.panel);
   ctx.strokeStyle = C.border;
-  ctx.lineWidth = 2;
-  ctx.strokeRect(16, 184, 512, 16);
-  txt(ctx, 24, 186, '正在输入...', C.dim, 20);
-  // Clawd
-  drawClawd(ctx, 464, 152, st);
+  ctx.lineWidth = 1;
+  ctx.strokeRect(12, 120, 336, 12);
+  txt(ctx, 18, 121, '正在输入...', C.dim, 12);
 }
 
-// S3: 代码 + 槽位
+// S3: 代码 + 槽位 (terminal 360×140 content)
 function drawS3(ctx, t, sceneStart) {
   const st = t - sceneStart;
-  // code lines
+  // code lines (left side, max width 180px)
   const codes = [
     'import clawd',
     'from core import think',
@@ -295,105 +344,103 @@ function drawS3(ctx, t, sceneStart) {
     '        remember("her")',
   ];
   for (let i = 0; i < codes.length; i++) {
-    const cy = 16 + i * 32;
+    const cy = 12 + i * 16;
     if (st > i * 0.5) {
-      txt(ctx, 20, cy, `${i + 1}`, C.dim, 20);
+      txt(ctx, 12, cy, `${i + 1}`, C.dim, 12);
       if (codes[i]) {
-        txt(ctx, 60, cy, codes[i], C.text, 20);
+        txt(ctx, 40, cy, codes[i].substring(0, 18), C.text, 12);
       }
     }
   }
-  // slot bars
-  const sx = 360, sy = 164;
+  // slot bars (right side, x=280)
+  const sx = 280, sy = 60;
   for (let i = 0; i < 6; i++) {
-    const sy2 = sy + i * 28;
-    px(ctx, sx, sy2, 24, 16, C.panel);
+    const sy2 = sy + i * 14;
+    px(ctx, sx, sy2, 16, 10, C.panel);
     ctx.strokeStyle = C.border;
-    ctx.lineWidth = 2;
-    ctx.strokeRect(sx, sy2, 24, 16);
+    ctx.lineWidth = 1;
+    ctx.strokeRect(sx, sy2, 16, 10);
     // glow
     const glow = 0.5 + 0.5 * Math.sin(st * 3 + i * 0.5);
     ctx.fillStyle = `rgba(126,231,135,${glow * 0.3})`;
-    ctx.fillRect(sx + 2, sy2 + 2, 20, 12);
+    ctx.fillRect(sx + 1, sy2 + 1, 14, 8);
   }
-  // tokens
-  txt(ctx, sx, sy - 20, 'tokens: 1,247,892', C.green, 20);
-  // Clawd
-  drawClawd(ctx, 472, 176, st, 'think');
+  // tokens (above slots, centered)
+  txt(ctx, sx - 20, 32, 'tokens: 1.2M', C.green, 12);
+  // Clawd (above slots, right)
+  drawClawd(ctx, 280, 4, st, 'think');
 }
 
-// S4: 空槽 + 等待
+// S4: 空槽 + 等待 (terminal 360×140 content)
 function drawS4(ctx, t, sceneStart) {
   const st = t - sceneStart;
   // pinned bar
-  px(ctx, 16, 16, 420, 28, '#2A1F3D');
+  px(ctx, 12, 8, 336, 20, '#2A1F3D');
   ctx.strokeStyle = C.purple2;
-  ctx.lineWidth = 2;
-  ctx.strokeRect(16, 16, 420, 28);
-  txt(ctx, 24, 20, '📌 我还在等你的消息', C.purple, 20);
+  ctx.lineWidth = 1;
+  ctx.strokeRect(12, 8, 336, 20);
+  txt(ctx, 18, 12, '📌 我还在等你的消息', C.purple, 12);
   // empty lines
   for (let i = 0; i < 3; i++) {
-    const ey = 60 + i * 32;
+    const ey = 36 + i * 20;
     ctx.strokeStyle = C.border;
     ctx.lineWidth = 1;
-    ctx.strokeRect(20, ey, 440, 24);
+    ctx.strokeRect(16, ey, 328, 16);
   }
   // 09:00 (inside second empty line box)
-  txt(ctx, 24, 92, '09:00  无消息', C.dim, 20);
+  txt(ctx, 20, 40, '09:00  无消息', C.dim, 12);
   // slot0
-  px(ctx, 420, 184, 60, 16, C.panel);
+  px(ctx, 280, 120, 40, 12, C.panel);
   ctx.strokeStyle = C.border;
-  ctx.lineWidth = 2;
-  ctx.strokeRect(420, 184, 60, 16);
-  txt(ctx, 424, 186, '0%', C.dim, 20);
+  ctx.lineWidth = 1;
+  ctx.strokeRect(280, 120, 40, 12);
+  txt(ctx, 284, 121, '0%', C.dim, 12);
   // battery
-  drawBattery(ctx, 20, 184, st, sceneStart);
-  // Clawd (sad, 右移)
-  drawClawd(ctx, 464, 156, st, 'sad');
+  drawBattery(ctx, 16, 120, st, sceneStart);
 }
 
-// S5: 等待 + 压缩
+// S5: 等待 + 压缩 (terminal 360×140 content)
 function drawS5(ctx, t, sceneStart) {
   const st = t - sceneStart;
   // scanlines
   ctx.fillStyle = 'rgba(255,255,255,0.03)';
-  for (let y = -6; y < 208; y += 3) {
-    ctx.fillRect(0, y, 544, 1);
+  for (let y = 0; y < 140; y += 3) {
+    ctx.fillRect(0, y, 360, 1);
   }
   // waiting
-  txt(ctx, 20, 24, '等待中...', C.dim, 24);
+  txt(ctx, 12, 12, '等待中...', C.dim, 14);
   // tokens
-  txt(ctx, 20, 64, 'tokens: 982,341 → 1,047,293', C.green, 20);
+  txt(ctx, 12, 36, 'tokens: 982,341 → 1,047,293', C.green, 12);
   // compress
-  txt(ctx, 20, 92, 'compressing... 73%', C.amber, 20);
+  txt(ctx, 12, 56, 'compressing... 73%', C.amber, 12);
   // re-pin
   const p = easeInOut(clamp01((st - 2) / 1.5));
-  const py = 128 - p * 16;
-  px(ctx, 20, py, 12, 16, C.purple);
-  txt(ctx, 38, py, '📌 重新固定', C.purple, 20);
+  const py = 76 - p * 8;
+  px(ctx, 12, py, 8, 10, C.purple);
+  txt(ctx, 24, py, '📌 重新固定', C.purple, 12);
   // waitlog
-  drawWaitLog(ctx, 20, 152, st, sceneStart + 1);
+  drawWaitLog(ctx, 12, 96, st, sceneStart + 1);
   // fatfish
-  drawFatFish(ctx, 452, 80, st, 'normal');
+  drawFatFish(ctx, 280, 40, st, 'normal');
 }
 
-// S6: 冷色结尾
+// S6: 冷色结尾 (full screen, no terminal)
 function drawS6(ctx, t, sceneStart) {
   const st = t - sceneStart;
   // cold bg
-  px(ctx, 0, 0, BW, 296, '#040810');
+  px(ctx, 0, 0, BW, BH, '#040810');
   // golden text
-  txt(ctx, BW / 2, 112, '晚安。明天见。', C.amber, 28, 'center');
+  txt(ctx, BW / 2, 100, '晚安。明天见。', C.amber, 20, 'center');
   // slot0
-  txt(ctx, BW / 2, 172, '· slot 0 ·', C.dim, 24, 'center');
+  txt(ctx, BW / 2, 152, '· slot 0 ·', C.dim, 16, 'center');
   // forever
-  txt(ctx, BW / 2, 208, '永远留给明天', C.cold, 24, 'center');
+  txt(ctx, BW / 2, 180, '永远留给明天', C.cold, 16, 'center');
   // Clawd
-  drawClawd(ctx, BW / 2 - 14, 244, st, 'sad');
+  drawClawd(ctx, BW / 2 - 14, 220, st, 'sad');
   // note
-  drawNote(ctx, 56, 172, st, '晚安');
+  drawNote(ctx, 48, 160, st, '晚安');
   // her
-  drawHer(ctx, 528, 172, st, 'stand');
+  drawHer(ctx, 540, 160, st, 'stand');
   // dust
   drawDust(ctx, st);
 }
@@ -406,11 +453,11 @@ function drawSubtitle(ctx, t) {
   // hide during CARD
   if (t >= CARD.st && t <= CARD.en) return;
   const inS6 = t >= SCENES[5].start;
-  const barY = 300;
-  px(ctx, 0, barY, BW, 60, inS6 ? '#0A0E14' : C.bgWarm2);
+  const barY = 320;
+  px(ctx, 0, barY, BW, 40, inS6 ? '#0A0E14' : C.bgWarm2);
   ctx.strokeStyle = inS6 ? '#1A2230' : C.noteBd;
-  ctx.lineWidth = 2;
-  ctx.strokeRect(0, barY, BW, 60);
+  ctx.lineWidth = 1;
+  ctx.strokeRect(0, barY, BW, 40);
   // character-by-character reveal
   const chars = LINES[cl.idx].split('');
   let shown = 0;
@@ -420,7 +467,7 @@ function drawSubtitle(ctx, t) {
     if (charTime >= charStart) shown++;
   }
   const display = chars.slice(0, shown).join('');
-  txt(ctx, BW / 2, barY + 20, display, inS6 ? C.dim : C.noteTx, 20, 'center');
+  txt(ctx, BW / 2, barY + 12, display, inS6 ? C.dim : C.noteTx, 14, 'center');
 }
 
 // --- Scene timing ---
@@ -445,50 +492,42 @@ function renderFrame(n) {
     if (t >= s.start && t < s.end) { scene = s; break; }
   }
 
-  // Warm bg for S1-S5
-  if (scene.id !== 'S6') {
-    bctx.fillStyle = C.bgWarm;
-    bctx.fillRect(0, 0, BW, BH);
-    // subtle texture
-    bctx.fillStyle = 'rgba(0,0,0,0.02)';
-    for (let x = 0; x < BW; x += 12) {
-      bctx.fillRect(x, 0, 6, BH);
-    }
-  }
+  // Background (S1-S5: warm room + window; S6: cold bg)
+  const st = t - scene.start;
+  drawBackground(bctx, st, scene.id === 'S6');
 
-  // Window chrome (S1-S5 only; S6 is full-screen cold bg)
-  const termX = 48, termY = 44;
-  const termW = 544, termH = 272;
+  // Terminal window (S1-S5 only; S6 is full-screen cold bg)
+  const termX = 140, termY = 160;
+  const termW = 360, termH = 160;
   if (scene.id !== 'S6') {
     // shadow
     bctx.fillStyle = 'rgba(0,0,0,0.15)';
-    bctx.fillRect(termX + 6, termY + 6, termW, termH);
+    bctx.fillRect(termX + 4, termY + 4, termW, termH);
     // body
     bctx.fillStyle = C.termBg;
     bctx.fillRect(termX, termY, termW, termH);
     // border
     bctx.strokeStyle = C.termBd;
-    bctx.lineWidth = 4;
+    bctx.lineWidth = 2;
     bctx.strokeRect(termX, termY, termW, termH);
-    // title bar
+    // title bar (20px)
     bctx.fillStyle = C.termTitle;
-    bctx.fillRect(termX, termY, termW, 28);
-    // buttons
-    px(bctx, termX + 12, termY + 10, 10, 10, C.red);
-    px(bctx, termX + 30, termY + 10, 10, 10, C.amber);
-    px(bctx, termX + 48, termY + 10, 10, 10, C.green);
+    bctx.fillRect(termX, termY, termW, 20);
+    // buttons (6×6)
+    px(bctx, termX + 8, termY + 7, 6, 6, C.red);
+    px(bctx, termX + 18, termY + 7, 6, 6, C.amber);
+    px(bctx, termX + 28, termY + 7, 6, 6, C.green);
     // title
-    const titles = ['chat — session 412', 'chat — session 412', 'workspace — bench.js', 'chat — session 412', 'system — wait'];
+    const titles = ['chat — s412', 'chat — s412', 'bench.js', 'chat — s412', 'wait'];
     const ti = SCENES.indexOf(scene);
-    txt(bctx, termX + termW / 2 + 32, termY + 10, titles[ti], C.dim, 20, 'center');
+    txt(bctx, termX + termW / 2, termY + 5, titles[ti], C.dim, 12, 'center');
   }
 
-  // Draw scene content (translate to window content origin)
+  // Draw scene content (translate to terminal content origin)
   bctx.save();
   if (scene.id !== 'S6') {
-    bctx.translate(termX, termY + 28);
+    bctx.translate(termX, termY + 20);
   }
-  const st = t - scene.start;
   switch (scene.id) {
     case 'S1': drawS1(bctx, t, scene.start); break;
     case 'S2': drawS2(bctx, t, scene.start); break;
