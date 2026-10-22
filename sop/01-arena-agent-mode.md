@@ -119,14 +119,28 @@ await task.finish({ keep: ['p1'] })  // 保留页面让用户看
 - **迭代**: 第一次不一定完美，在 arena 里多轮迭代
 - **验证**: arena 做完后必须本地验证（check_overlap + 人工审核）
 - **⚠️ Arena 不能 push 回原仓库** (v1.3.1 教训): arena sandbox 的 git auth 绑定到自己的仓库，无法 push 到 d1-video-recreation。arena 只能在本地工作，结果需要本地手动应用
+- **✅ Arena 可以 push 到自己的仓库** (goodmorning v1.0 成功): arena 会创建分支 `arena/<session-id>-prompt-first-bench` 并 push 到 `dd2003-460/prompt-first-bench` 仓库，然后创建 PR。本地 `git clone` 该仓库 → `git checkout arena/...` → 复制文件到 d1-video-recreation 即可
 - **⚠️ Arena 会改写全局数据** (v1.3.1 教训): arena 在修 bug 时可能重写 LINES/SCENES 等全局数组，导致音频失同步。prompt 必须明确"不要修改 LINES/STARTS/SCENES"
 - **⚠️ React SPA 限制** (v1.3.1 教训): arena 页面是 React SPA，body 文本不会实时更新新内容。ego-browser 的 `document.body.innerText` 可能显示旧内容。用 `p1.snapshot()` 而非 body 文本
+- **✅ 提取代码的正确方式** (goodmorning v1.0 验证):
+  1. arena 完成后，页面显示 "Create PR" 按钮和分支名
+  2. `git clone https://github.com/dd2003-460/prompt-first-bench.git`
+  3. `git checkout arena/<session-id>-prompt-first-bench`
+  4. 复制 `render_goodmorning.js` → `src/render_goodmorning_arena.js`
+  5. 复制 `check_overlap.js` → `src/check_overlap_arena.js`（注意 require 路径要改）
+  6. 复制 `scripts/build_audio.js` → `scripts/build_audio_arena.js`
+  7. 复制 `outputs/*.mp4` → `outputs/`
+  8. 本地运行 `node src/check_overlap_arena.js` 验证
 
-## 六、当前项目状态 (v1.3.1 已完成)
+## 六、当前项目状态
 
-- 仓库: `dd2003-460/d1-video-recreation` (commit 77838c7)
-- 当前版本: v1.3.1 (86.48s, 1280×720@60fps, 像素块 4-6px)
-- v1.3.1 修复: S6 无窗口框, Clawd 无天线, CB.h=244, 严格重叠, txt() 性能, S6 冷色字幕
-- 音频: `audio/final_mix_v1.1.wav` (86.48s, 无人声)
-- 输出: `outputs/full_v1.3.mp4` (2.8MB, h264+aac)
-- 验收: check_overlap 8/8 + arena 自审核 (9 问题已修复)
+| 视频 | 版本 | 时长 | 制作方式 | 重叠检测 | 状态 |
+|------|------|------|----------|----------|------|
+| full | v1.3.4 | 86.48s | arena 外包 | 8/8 PASSED | ✅ |
+| goodmorning | arena v1.0 | 30s | arena 外包 | 13/13 PASSED | ✅ |
+| goodmorning | 本地 v1.1 | 30s | 本地制作 | 未检测 | ❌ 不达标 |
+| fear | v1.0 | 30s | 本地制作 | F1 有重叠 | ❌ 待修 |
+
+- 仓库: `dd2003-460/d1-video-recreation` (commit ac8a2bd)
+- arena 仓库: `dd2003-460/prompt-first-bench` (branch: arena/57893324-prompt-first-bench)
+- 关键教训: **本地制作达不到 arena 的美术风格**（键盘声音、Clawd 形象、布局），必须外包
