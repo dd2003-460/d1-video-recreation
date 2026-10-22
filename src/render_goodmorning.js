@@ -272,25 +272,26 @@ function drawG1(ctx, t) {
   const msg2 = '> 早安';
   const typed1 = Math.min(msg1.length, Math.floor(t / 0.15));
   const typed2 = t > 3 ? Math.min(msg2.length, Math.floor((t - 3) / 0.1)) : 0;
-  txt(ctx, 12, 16, msg1.substring(0, typed1), C.text, 14);
+  txt(ctx, 12, 16, msg1.substring(0, typed1), C.text, 12);
   if (typed1 < msg1.length && t < 3) {
-    px(ctx, 12 + typed1 * 8.5, 16, 8, 14, C.green);
+    px(ctx, 12 + typed1 * 7, 16, 6, 12, C.green);
   }
   if (typed2 > 0) {
-    txt(ctx, 12, 40, msg2.substring(0, typed2), C.green, 14);
+    txt(ctx, 12, 36, msg2.substring(0, typed2), C.green, 12);
   }
   // Date
   if (t > 4) {
-    txt(ctx, 12, 70, 'Tue Oct 22 07:00', C.dim, 12);
+    txt(ctx, 12, 60, 'Tue Oct 22 07:00', C.dim, 10);
   }
-  // Clawd (happy)
-  drawClawd(ctx, 280, 100, t, 'happy');
   // Scanlines
   ctx.fillStyle = 'rgba(0,0,0,0.03)';
   for (let y = 0; y < termH - 20; y += 2) {
     ctx.fillRect(0, y, termW, 1);
   }
   ctx.restore();
+  // Characters IN ROOM (not in terminal) — aligned with original video
+  drawClawd(ctx, 300, 180, t, 'happy');
+  drawHer(ctx, 350, 176, t);
   drawSubtitle(ctx, t);
 }
 
@@ -303,29 +304,28 @@ function drawG2(ctx, t) {
   // Messages
   const msgs = [
     { text: '早安，Clawd。', color: C.pink, y: 16 },
-    { text: '你睡得好吗？', color: C.pink, y: 44 },
-    { text: '一直都在等你。', color: C.green, y: 72 },
-    { text: '外面太阳出来了', color: C.pink, y: 100 },
+    { text: '你睡得好吗？', color: C.pink, y: 40 },
+    { text: '一直都在等你。', color: C.green, y: 64 },
+    { text: '外面太阳出来了', color: C.pink, y: 88 },
   ];
   const st = t - 10;
   for (let i = 0; i < msgs.length; i++) {
     if (st > i * 2) {
       // Message bubble
-      const bw = msgs[i].text.length * 14 + 16;
-      px(ctx, 12, msgs[i].y, bw, 20, 'rgba(255,255,255,0.08)');
+      const bw = msgs[i].text.length * 12 + 12;
+      px(ctx, 12, msgs[i].y, bw, 18, 'rgba(255,255,255,0.08)');
       ctx.strokeStyle = 'rgba(255,255,255,0.15)';
       ctx.lineWidth = 1;
-      ctx.strokeRect(12, msgs[i].y, bw, 20);
-      txt(ctx, 20, msgs[i].y + 3, msgs[i].text, msgs[i].color, 12);
+      ctx.strokeRect(12, msgs[i].y, bw, 18);
+      txt(ctx, 18, msgs[i].y + 3, msgs[i].text, msgs[i].color, 10);
     }
   }
   // Input bar
-  px(ctx, 12, 130, 336, 8, 'rgba(255,255,255,0.05)');
+  px(ctx, 12, 120, 336, 6, 'rgba(255,255,255,0.05)');
   ctx.restore();
-  // Her (waving)
-  drawHer(ctx, 20, 200, t);
-  // Clawd (happy)
-  drawClawd(ctx, 540, 210, t, 'happy');
+  // Characters IN ROOM (not in terminal) — aligned with original video
+  drawHer(ctx, 20, 180, t);
+  drawClawd(ctx, 540, 184, t, 'happy');
   drawSubtitle(ctx, t);
 }
 
@@ -341,9 +341,9 @@ function drawG3(ctx, t) {
   ctx.translate(termX, termY + 20);
   const st = t - 20;
   // Text
-  if (st > 1) txt(ctx, 12, 20, '明天见，Clawd。', C.amber, 14);
-  if (st > 3) txt(ctx, 12, 44, '· slot 0 ·', C.dim, 12);
-  if (st > 5) txt(ctx, 12, 64, '永远留给明天', C.purple, 12);
+  if (st > 1) txt(ctx, 12, 20, '明天见，Clawd。', C.amber, 12);
+  if (st > 3) txt(ctx, 12, 40, '· slot 0 ·', C.dim, 10);
+  if (st > 5) txt(ctx, 12, 56, '永远留给明天', C.purple, 10);
   ctx.restore();
   // Sticky note (card)
   const cardX = 420, cardY = 60, cardW = 180, cardH = 80;
@@ -357,11 +357,11 @@ function drawG3(ctx, t) {
   ctx.beginPath();
   ctx.arc(cardX + cardW / 2, cardY + 4, 4, 0, Math.PI * 2);
   ctx.fill();
-  txt(ctx, cardX + 12, cardY + 16, '早安', C.terminal, 16);
-  txt(ctx, cardX + 12, cardY + 40, 'Clawd & 她', C.dim, 12);
-  // Characters
-  drawClawd(ctx, 280, 100, t, 'happy');
-  drawHer(ctx, 340, 96, t);
+  txt(ctx, cardX + 12, cardY + 16, '早安', C.terminal, 14);
+  txt(ctx, cardX + 12, cardY + 36, 'Clawd & 她', C.dim, 10);
+  // Characters IN ROOM (not in terminal) — aligned with original video
+  drawClawd(ctx, 280, 180, t, 'happy');
+  drawHer(ctx, 330, 176, t);
   // Sparkles
   for (let i = 0; i < 5; i++) {
     const sx = 100 + i * 120 + Math.sin(t * 2 + i) * 10;
