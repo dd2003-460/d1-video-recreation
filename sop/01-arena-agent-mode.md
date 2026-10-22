@@ -1,7 +1,7 @@
 # 01 · Arena Agent Mode 外包流程
 
 > origin: human (成璐 m00002: "全部外包给arena的agentmode")
-> 最后更新: 2026-10-21
+> 最后更新: 2026-10-23
 > 适用: 任何需要把视觉/媒体制作任务外包给 arena.ai/agent 的场景
 
 ## 一、为什么用 Arena Agent Mode
@@ -141,7 +141,13 @@ await task.finish({ keep: ['p1'] })  // 保留页面让用户看
 | goodmorning | 本地 v1.1 | 30s | 本地制作 | 未检测 | ❌ 不达标 |
 | fear | v1.1 | 30s | 本地制作 | 3/3 PASSED | ✅ |
 | memory | v1.0 | 30s | 本地制作 | 3/3 PASSED | ✅ |
+| upgrade | arena v1.0 | 30s | arena 外包 | 13/13 PASSED | ✅ (PR #3) |
+| upgrade | 本地 v1.0 | 30s | 本地制作 | 3/3 PASSED | ❌ 不达标 |
+| learning | v1.0 | 30s | 本地制作 | 3/3 PASSED | ⏳ arena 处理中 |
+| dream | arena v1.0 | 30s | arena 外包 (27m21s) | 13/13 PASSED | ✅ (PR #2) |
 
-- 仓库: `dd2003-460/d1-video-recreation` (commit ac8a2bd)
-- arena 仓库: `dd2003-460/prompt-first-bench` (branch: arena/57893324-prompt-first-bench)
+- 仓库: `dd2003-460/d1-video-recreation` (commit 6d82a63)
+- arena 仓库: `dd2003-460/prompt-first-bench` (PR #1 goodmorning, PR #2 dream, PR #3 upgrade)
 - 关键教训: **本地制作达不到 arena 的美术风格**（键盘声音、Clawd 形象、布局），必须外包
+- 主题优先级: memory → dream → upgrade → learning (dream/upgrade 已完成 via arena)
+- ego-browser 发送技巧: tiptap 输入框有时不在 snapshot 中，用 `p1.evaluate()` + IIFE 包装填充
