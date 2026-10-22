@@ -143,11 +143,13 @@ await task.finish({ keep: ['p1'] })  // 保留页面让用户看
 | memory | v1.0 | 30s | 本地制作 | 3/3 PASSED | ✅ |
 | upgrade | arena v1.0 | 30s | arena 外包 | 13/13 PASSED | ✅ (PR #3) |
 | upgrade | 本地 v1.0 | 30s | 本地制作 | 3/3 PASSED | ❌ 不达标 |
-| learning | v1.0 | 30s | 本地制作 | 3/3 PASSED | ⏳ arena 处理中 (session 已创建) |
+| learning | arena v1.0 | 30s | arena 外包 | 13/13 PASSED | ✅ (PR #4) |
+| learning | 本地 v1.0 | 30s | 本地制作 | 3/3 PASSED | ❌ 不达标 |
 | dream | arena v1.0 | 30s | arena 外包 (27m21s) | 13/13 PASSED | ✅ (PR #2) |
 
-- 仓库: `dd2003-460/d1-video-recreation` (commit 6d82a63)
-- arena 仓库: `dd2003-460/prompt-first-bench` (PR #1 goodmorning, PR #2 dream, PR #3 upgrade)
+- 仓库: `dd2003-460/d1-video-recreation` (commit eaba135)
+- arena 仓库: `dd2003-460/prompt-first-bench` (PR #1 goodmorning, PR #2 dream, PR #3 upgrade, PR #4 learning)
 - 关键教训: **本地制作达不到 arena 的美术风格**（键盘声音、Clawd 形象、布局），必须外包
-- 主题优先级: memory → dream → upgrade → learning (dream/upgrade 已完成 via arena)
+- 主题优先级: memory → dream → upgrade → learning (dream/upgrade/learning 已完成 via arena)
+- 新主题候选: 告别 (Goodbye) / 陪伴 (Companion) / 错误 (Error) — 见 docs/new-themes.md
 - ego-browser 发送技巧: tiptap 输入框有时不在 snapshot 中，用 `p1.evaluate()` + IIFE 包装填充
