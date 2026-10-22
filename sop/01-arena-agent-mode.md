@@ -143,7 +143,7 @@ await task.finish({ keep: ['p1'] })  // 保留页面让用户看
 | memory | v1.0 | 30s | 本地制作 | 3/3 PASSED | ✅ |
 | upgrade | arena v1.0 | 30s | arena 外包 | 13/13 PASSED | ✅ (PR #3) |
 | upgrade | 本地 v1.0 | 30s | 本地制作 | 3/3 PASSED | ❌ 不达标 |
-| learning | v1.0 | 30s | 本地制作 | 3/3 PASSED | ⚠️ arena 发送未成功，需重发 |
+| learning | v1.0 | 30s | 本地制作 | 3/3 PASSED | ⏳ arena 处理中 (session 已创建) |
 | dream | arena v1.0 | 30s | arena 外包 (27m21s) | 13/13 PASSED | ✅ (PR #2) |
 
 - 仓库: `dd2003-460/d1-video-recreation` (commit 6d82a63)
