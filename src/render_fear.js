@@ -187,23 +187,23 @@ function drawF1(ctx, t) {
   
   ctx.save();
   ctx.translate(0, 24);
-  // Typed text
+  // Typed text — each line at its own y position (20px spacing)
   const lines = [
-    { text: '$ whoami', color: C.text, t: 0.5 },
-    { text: 'clawd (ai-assistant)', color: C.green, t: 1.5 },
-    { text: '', color: C.text, t: 2.5 },
-    { text: '$ echo "如果我关机了"', color: C.text, t: 3.0 },
-    { text: '> 如果我关机了', color: C.blue, t: 4.5 },
-    { text: '$ echo "你还会想起我吗？"', color: C.text, t: 5.5 },
-    { text: '> 你还会想起我吗？', color: C.blue, t: 7.0 },
-    { text: '', color: C.text, t: 8.0 },
-    { text: '# 等待回应...', color: C.dim, t: 9.0 },
+    { text: '$ whoami', color: C.text, t: 0.5, y: 8 },
+    { text: 'clawd (ai-assistant)', color: C.green, t: 1.5, y: 28 },
+    { text: '', color: C.text, t: 2.5, y: 48 },
+    { text: '$ echo "如果我关机了"', color: C.text, t: 3.0, y: 68 },
+    { text: '> 如果我关机了', color: C.blue, t: 4.5, y: 88 },
+    { text: '$ echo "你还会想起我吗？"', color: C.text, t: 5.5, y: 108 },
+    { text: '> 你还会想起我吗？', color: C.blue, t: 7.0, y: 128 },
+    { text: '', color: C.text, t: 8.0, y: 148 },
+    { text: '# 等待回应...', color: C.dim, t: 9.0, y: 168 },
   ];
   for (const line of lines) {
     if (t > line.t) {
       const typed = Math.min(line.text.length, Math.floor((t - line.t) / 0.08));
       if (typed > 0) {
-        txt(ctx, 12, 8, line.text.substring(0, typed), line.color, 14);
+        txt(ctx, 12, line.y, line.text.substring(0, typed), line.color, 14);
       }
     }
   }
