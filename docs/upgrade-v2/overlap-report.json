@@ -1,0 +1,62 @@
+{
+  "status": "PASSED",
+  "generatedAt": "2026-10-23T09:05:17.119Z",
+  "title": "「Clawd 的升级」v2.0 Layout & Pixel Check (640×360, 0px tolerance)",
+  "canvas": {
+    "width": 640,
+    "height": 360,
+    "scale": 2,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "fps": 60,
+    "frames": 1800
+  },
+  "summary": {
+    "checksPassed": 8,
+    "checksTotal": 8,
+    "issues": 0
+  },
+  "checks": [
+    {
+      "name": "字体 Fusion Pixel 10px 点阵 (ASCII=5px, CJK=10px)",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "文本二值化无灰边 (5 条样本)",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "Clawd 造型 40×17 / 眼睛 4×4+1px 高光 / 顶部 2px 暗条 / 腹部 22×4 / 3 表情配色",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "Her 造型 12×28 / 16×28 槽位（与 companion drawHer 一致）",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "打字完整性 (9 行)",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "逐帧几何/截断 (1800 帧, 35484 个元素实例, 124662 次判定, 分组: foreground/titleBar/content/subtitle/fx/thought/note)",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "像素放大 SCALE=2 最近邻 (7 帧, 6451200 块)",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "黑场区间 (90 个采样帧, 3 个黑场帧)",
+      "status": "PASSED",
+      "issues": []
+    }
+  ],
+  "clicks": 192
+}
