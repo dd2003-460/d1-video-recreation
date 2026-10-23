@@ -4,8 +4,7 @@
   "起点": "batch-5（E01-E04），依据 docs/episodes.md",
   "已完成": "batch-5 共 4 集（E01-E04）+ batch-6 共 4 集（E05-E08），累计 21 个视频（status-table.md）",
   "每批流程": "写 arena prompt → push → arena agent mode 执行 → PR 提取 → check_overlap → episodes.md 改 ✅",
-  "进展": "batch-5 完成（commit 1f717c5）；batch-6 完成（commit 4412235，E05-E08 全部 8/8 PASSED）；下一批 batch-7（E09-E12：恐惧/希望/习惯/下意识）",
-  "batch-6-prompt": "arena-prompts/batch6-episodes-v1.1.md（71行，防No Changes：直接写文件不讨论）",
-  "batch-6-v1.0-failure": "261行prompt导致arena只讨论不写文件（No Changes），v1.1缩短到71行",
+  "进展": "batch-5 完成（commit 1f717c5）；batch-6 完成（commit 4412235，E05-E08 全部 8/8 PASSED）；batch-7 任务书 push（commit 88006c2），arena session 01a16a0c-82a1-7230-99dc-506bd9e801a4 已投送，等待执行完成",
+  "batch-7-episodes": "E09 恐惧/E10 希望/E11 习惯/E12 下意识",
   "更新": "2026-10-24"
 }
