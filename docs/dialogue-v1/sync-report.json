@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-10-23T09:55:28.516Z",
+  "source": "outputs/dialogue_arena_v1.0.mp4",
+  "status": "PASSED",
+  "expectedClicks": 217,
+  "detectedOnsets": 217,
+  "matched": 217,
+  "missed": 0,
+  "unmatchedOnsets": 0,
+  "maxOffsetMs": 6.6670000000002005,
+  "maxOffsetFrames": 0.400020000000012,
+  "allTimestampsOnDisplayFrames": true
+}

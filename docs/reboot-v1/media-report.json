@@ -1,0 +1,120 @@
+{
+  "generatedAt": "2026-10-23T09:55:24.751Z",
+  "source": "outputs/reboot_arena_v1.0.mp4",
+  "status": "PASSED",
+  "sizeBytes": 1208359,
+  "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1280,
+    "height": 720,
+    "pix_fmt": "yuv420p",
+    "fps": "60/1",
+    "frames": 1800,
+    "duration": 30,
+    "audio": {
+      "codec": "aac",
+      "sampleRate": 44100,
+      "channels": 1
+    }
+  },
+  "checks": [
+    {
+      "name": "容器/编码 1280×720@60fps · 1800帧 · 30s",
+      "ok": true,
+      "detail": {
+        "codec": "h264",
+        "profile": "High",
+        "width": 1280,
+        "height": 720,
+        "pix_fmt": "yuv420p",
+        "fps": "60/1",
+        "frames": 1800,
+        "duration": 30,
+        "audio": {
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 1
+        }
+      }
+    },
+    {
+      "name": "成片像素网格 / Clawd 眼睛 / 12px 窗棂",
+      "ok": true,
+      "detail": {
+        "room2x": 1,
+        "terminal2x": 0.9998409090909091,
+        "eye": {
+          "w": 8,
+          "h": 8,
+          "at": [
+            108,
+            508
+          ]
+        },
+        "mullion": 12
+      }
+    },
+    {
+      "name": "音频无削波 / 30s / 与 PCM 混音一致",
+      "ok": true,
+      "detail": {
+        "duration": 30.00018140589569,
+        "peak": 0.2215576171875,
+        "peakDbFS": -13.090266285192484,
+        "rmsDbFS": -33.80139048128289,
+        "clippedSamples": 0,
+        "correlationWithMix": 0.9999976878951166,
+        "bgmGain": 0.251188643150958,
+        "sfxGain": 0.5011872336272722
+      }
+    },
+    {
+      "name": "片头片尾与场景黑场",
+      "ok": true,
+      "detail": [
+        {
+          "frame": 0,
+          "luma": 0
+        },
+        {
+          "frame": 24,
+          "luma": 83.94927485890679
+        },
+        {
+          "frame": 585,
+          "luma": 0.8673226681914497
+        },
+        {
+          "frame": 600,
+          "luma": 0.1345009678819443
+        },
+        {
+          "frame": 615,
+          "luma": 0.13446357204861095
+        },
+        {
+          "frame": 1190,
+          "luma": 0.17120088650173595
+        },
+        {
+          "frame": 1200,
+          "luma": 0
+        },
+        {
+          "frame": 1210,
+          "luma": 27.198394135368115
+        },
+        {
+          "frame": 1230,
+          "luma": 84.15805217879931
+        },
+        {
+          "frame": 1799,
+          "luma": 1.5887293370319375
+        }
+      ]
+    }
+  ],
+  "issues": []
+}

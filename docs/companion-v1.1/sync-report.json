@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-10-23T09:55:20.931Z",
+  "source": "outputs/companion_arena_v1.1.mp4",
+  "status": "PASSED",
+  "expectedClicks": 70,
+  "detectedOnsets": 70,
+  "matched": 70,
+  "missed": 0,
+  "unmatchedOnsets": 0,
+  "maxOffsetMs": 6.6670000000002005,
+  "maxOffsetFrames": 0.400020000000012,
+  "allTimestampsOnDisplayFrames": true
+}

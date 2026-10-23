@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-10-23T09:55:32.316Z",
+  "source": "outputs/farewell_arena_v1.0.mp4",
+  "status": "PASSED",
+  "expectedClicks": 232,
+  "detectedOnsets": 232,
+  "matched": 232,
+  "missed": 0,
+  "unmatchedOnsets": 0,
+  "maxOffsetMs": 6.6670000000002005,
+  "maxOffsetFrames": 0.400020000000012,
+  "allTimestampsOnDisplayFrames": true
+}

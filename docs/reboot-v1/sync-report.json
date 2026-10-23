@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-10-23T09:55:24.751Z",
+  "source": "outputs/reboot_arena_v1.0.mp4",
+  "status": "PASSED",
+  "expectedClicks": 152,
+  "detectedOnsets": 152,
+  "matched": 152,
+  "missed": 0,
+  "unmatchedOnsets": 0,
+  "maxOffsetMs": 6.6670000000002005,
+  "maxOffsetFrames": 0.400020000000012,
+  "allTimestampsOnDisplayFrames": true
+}

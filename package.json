@@ -1,29 +1,66 @@
 {
-  "name": "d1-video-recreation",
+  "name": "prompt-first-bench",
   "version": "1.0.0",
-  "description": "像素风视频制作项目 — 对标 bilibili 参考视频，用 Node+canvas 渲染 720p 帧序列 → ffmpeg 合成。",
+  "description": "D1 像素风视频「Clawd 的学习 / 升级」v2.0 (arena) + prompt-first 流程调研仓库",
+  "private": true,
+  "type": "commonjs",
   "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check": "node src/check_overlap_arena.js",
+    "overlap": "node src/check_overlap_arena.js",
+    "render": "node src/render_learning_arena.js",
+    "audio": "node scripts/build_audio_arena.js",
+    "build": "node src/check_overlap_arena.js && node src/render_learning_arena.js && node scripts/build_audio_arena.js --mux",
+    "error:check": "node src/check_overlap_error.js",
+    "error:render": "node src/render_error_arena.js",
+    "error:audio": "node scripts/build_audio_error.js",
+    "error:build": "node src/check_overlap_error.js && node src/render_error_arena.js && node scripts/build_audio_error.js --mux",
+    "check:v2": "node src/check_overlap_learning_v2.js && node src/check_overlap_upgrade_v2.js",
+    "render:learning:v2": "node src/render_learning_arena_v2.js",
+    "render:upgrade:v2": "node src/render_upgrade_arena_v2.js",
+    "audio:learning:v2": "node scripts/build_audio_learning_v2.js",
+    "audio:upgrade:v2": "node scripts/build_audio_upgrade_v2.js",
+    "build:learning:v2": "node src/check_overlap_learning_v2.js && node src/render_learning_arena_v2.js && node scripts/build_audio_learning_v2.js --mux && node scripts/verify_av_sync_v2.js learning && node scripts/verify_media_v2.js learning",
+    "build:upgrade:v2": "node src/check_overlap_upgrade_v2.js && node src/render_upgrade_arena_v2.js && node scripts/build_audio_upgrade_v2.js --mux && node scripts/verify_av_sync_v2.js upgrade && node scripts/verify_media_v2.js upgrade",
+    "verify:v2": "node scripts/verify_av_sync_v2.js learning && node scripts/verify_av_sync_v2.js upgrade && node scripts/verify_media_v2.js all",
+    "check:companion:v11": "node src/check_overlap_companion_v11.js",
+    "check:reboot": "node src/check_overlap_reboot.js",
+    "check:dialogue": "node src/check_overlap_dialogue.js",
+    "check:farewell": "node src/check_overlap_farewell.js",
+    "check:story": "npm run check:companion:v11 && npm run check:reboot && npm run check:dialogue && npm run check:farewell",
+    "render:companion:v11": "node src/render_companion_arena_v11.js",
+    "render:reboot": "node src/render_reboot_arena.js",
+    "render:dialogue": "node src/render_dialogue_arena.js",
+    "render:farewell": "node src/render_farewell_arena.js",
+    "audio:companion:v11": "node scripts/build_audio_companion_v11.js",
+    "audio:reboot": "node scripts/build_audio_reboot.js",
+    "audio:dialogue": "node scripts/build_audio_dialogue.js",
+    "audio:farewell": "node scripts/build_audio_farewell.js",
+    "build:companion:v11": "node src/check_overlap_companion_v11.js && node src/render_companion_arena_v11.js && node scripts/build_audio_companion_v11.js --mux",
+    "build:reboot": "node src/check_overlap_reboot.js && node src/render_reboot_arena.js && node scripts/build_audio_reboot.js --mux",
+    "build:dialogue": "node src/check_overlap_dialogue.js && node src/render_dialogue_arena.js && node scripts/build_audio_dialogue.js --mux",
+    "build:farewell": "node src/check_overlap_farewell.js && node src/render_farewell_arena.js && node scripts/build_audio_farewell.js --mux",
+    "verify:story": "node scripts/verify_story_outputs.js all",
+    "build:story": "npm run build:companion:v11 && npm run build:reboot && npm run build:dialogue && npm run build:farewell && npm run verify:story"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dd2003-460/d1-video-recreation.git"
+    "url": "git+https://github.com/dd2003-460/prompt-first-bench.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/dd2003-460/d1-video-recreation/issues"
+    "url": "https://github.com/dd2003-460/prompt-first-bench/issues"
   },
-  "homepage": "https://github.com/dd2003-460/d1-video-recreation#readme",
+  "homepage": "https://github.com/dd2003-460/prompt-first-bench#readme",
   "dependencies": {
     "@fontpkg/fusion-pixel": "^20220405.0.0",
-    "@fontsource/fusion-pixel-10px-monospaced-sc": "^5.3.0",
     "@napi-rs/canvas": "^1.0.13"
+  },
+  "devDependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@ffprobe-installer/ffprobe": "^2.1.2",
+    "@fontsource/fusion-pixel-10px-monospaced-sc": "^5.3.0"
   }
 }
