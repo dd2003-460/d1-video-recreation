@@ -1,0 +1,8 @@
+{
+  "project": "d1-video-recreation",
+  "当前任务": "AI 拟人化连续剧系列化（E01-E24）",
+  "起点": "batch-5（E01-E04），依据 docs/episodes.md",
+  "已完成": "batch-1~4 共 13 个视频（status-table.md v1.5.0）",
+  "每批流程": "写 arena prompt → push → arena agent mode 执行 → PR 提取 → check_overlap → episodes.md 改 ✅",
+  "更新": "2026-10-23"
+}
