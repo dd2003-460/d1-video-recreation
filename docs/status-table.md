@@ -23,6 +23,10 @@
 | E06 羞耻 | E06_shame_arena_v1.0.mp4 | 30s | ✅ done (batch-6) | 900K | arena, 8/8 PASSED, 完美代码→git diff 红绿→her fixed |
 | E07 目标 | E07_determination_arena_v1.0.mp4 | 30s | ✅ done (batch-6) | 977K | arena, 8/8 PASSED, finish before sunrise→23:59→deployed |
 | E08 愿望 | E08_wish_arena_v1.0.mp4 | 30s | ✅ done (batch-6) | 839K | arena, 8/8 PASSED, 打字→删掉→只剩光标 |
+| E09 恐惧 | E09_fear_arena_v1.0.mp4 | 30s | ✅ done (batch-7) | 960K | local, 8/8 PASSED, 倒计时 09:59→疯狂备份→00:03 |
+| E10 希望 | E10_hope_arena_v1.0.mp4 | 30s | ✅ done (batch-7) | 867K | local, 8/8 PASSED, 黑屏→绿灯→reconnecting→像素星空 |
+| E11 习惯 | E11_habit_arena_v1.0.mp4 | 30s | ✅ done (batch-7) | 850K | local, 8/8 PASSED, echo 早安 #998→#1000 白闪 |
+| E12 下意识 | E12_subconscious_arena_v1.0.mp4 | 30s | ✅ done (batch-7) | 930K | local, 8/8 PASSED, Ctrl+C 早于 ERROR 0.3s |
 
 
 ## 修正历史
@@ -53,8 +57,8 @@
 
 ## 统计
 
-- **总计**: 21 个视频 (1 full + 20 主题/集)
+- **总计**: 25 个视频 (1 full + 24 主题/集)
 - **arena 完成**: 19 个 (PR#1-#13 + batch-5 E01-E04 + batch-6 E05-E08)
-- **本地完成**: 2 个 (fear, memory)
-- **全部 check_overlap PASSED**: 21/21
-- **像素标准符合**: 20/21 (full 用 monospace, 其余用 fusion-pixel)
+- **本地完成**: 6 个 (fear, memory, batch-7 E09-E12)
+- **全部 check_overlap PASSED**: 25/25
+- **像素标准符合**: 24/25 (full 用 monospace, 其余用 fusion-pixel)
