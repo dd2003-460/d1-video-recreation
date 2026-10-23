@@ -4,26 +4,24 @@
 |------|------|------|------|------|------|
 | full | full_v1.3.4.mp4 | 86.48s | ✅ done | 2.8MB | arena, 6 场景, 像素标准 |
 | goodmorning | goodmorning_arena_v1.0.mp4 | 30s | ✅ done (PR#1) | 1.0M | arena |
-| fear | fear_v1.1.mp4 | 30s | ✅ done | 971K | 本地, 3/3 PASSED, DSH TUI |
-| memory | memory_v1.0.mp4 | 30s | ✅ done | 755K | 本地, 3/3 PASSED, DSH TUI |
-| upgrade | upgrade_arena_v1.0.mp4 | 30s | ✅ done (PR#3) | 553K | arena, ⚠️ 形象太丑→v2.0 修正中 |
-| learning | learning_arena_v1.0.mp4 | 30s | ✅ done (PR#4) | 545K | arena, ⚠️ 形象太丑+像素→v2.0 修正中 |
+| fear | fear_v1.1.mp4 | 30s | ✅ done | 4.7K | 本地, 3/3 PASSED, DSH TUI |
+| memory | memory_v1.0.mp4 | 30s | ✅ done | 772K | 本地, 3/3 PASSED, DSH TUI |
+| upgrade v2.0 | upgrade_arena_v2.0.mp4 | 30s | ✅ done (PR#11) | 979K | arena, 8/8 PASSED, 像素+形象修正 |
+| learning v2.0 | learning_arena_v2.0.mp4 | 30s | ✅ done (PR#11) | 937K | arena, 8/8 PASSED, 像素+形象修正 |
 | dream | dream_arena_v1.0.mp4 | 30s | ✅ done (PR#2) | 1.0M | arena |
 | goodbye | goodbye_arena_v1.0.mp4 | 30s | ✅ done (PR#5) | 853K | arena, 13/13 PASSED |
-| companion | companion_arena_v1.0.mp4 | 30s | ✅ done | 1.4M | arena, 15/15 PASSED, ⚠️ 终端太小→待修 |
+| companion v1.1 | companion_arena_v1.1.mp4 | 30s | ✅ done (PR#13) | 1.2M | arena, 8/8 PASSED, 终端 440×200 |
 | error | error_arena_v1.0.mp4 | 30s | ✅ done (PR#9) | 1.0M | arena, 13/13 PASSED |
-| learning v2.0 | learning_arena_v2.0.mp4 | 30s | ⏳ arena 处理中 | - | 像素+形象修正, SOP 05 v1.4.0 |
-| upgrade v2.0 | upgrade_arena_v2.0.mp4 | 30s | ⏳ arena 处理中 | - | 像素+形象修正, SOP 05 v1.4.0 |
-| reboot | reboot_arena_v1.0.mp4 | 30s | ⏳ pending | - | 第 3 批候选, prompt 已写 |
-| dialogue | dialogue_arena_v1.0.mp4 | 30s | ⏳ pending | - | 第 3 批候选, prompt 已写 |
-| farewell | farewell_arena_v1.0.mp4 | 30s | ⏳ pending | - | 第 3 批候选, prompt 已写 |
+| reboot | reboot_arena_v1.0.mp4 | 30s | ✅ done (PR#13) | 1.2M | arena, 8/8 PASSED, 关机→黑暗→重启 |
+| dialogue | dialogue_arena_v1.0.mp4 | 30s | ✅ done (PR#13) | 1.0M | arena, 8/8 PASSED, 早安→理解→陪伴 |
+| farewell | farewell_arena_v1.0.mp4 | 30s | ✅ done (PR#13) | 1.2M | arena, 8/8 PASSED, 决定→等待→回来 |
 
 ## 修正历史
 
 | 版本 | 问题 | 修正 | 状态 |
 |------|------|------|------|
-| learning/upgrade v2.0 | ①Clawd 形象太丑 ②像素过小/过于清晰 | 像素标准 4-6px + fusion-pixel 字体 + Clawd 40×17px (SOP 05 §5) | ⏳ arena 处理中 |
-| companion v1.1 | 终端太小 (360×160) | 待修 | ⏳ pending |
+| learning/upgrade v2.0 | ①Clawd 形象太丑 ②像素过小/过于清晰 | 像素标准 4-6px + fusion-pixel 字体 + Clawd 40×17px (SOP 05 §5) | ✅ done (PR#11, 8/8 PASSED) |
+| companion v1.1 | 终端太小 (360×160) | 终端扩大到 440×200px | ✅ done (PR#13, 8/8 PASSED) |
 
 ## 音频同步
 
@@ -43,3 +41,11 @@
 | 03-reusable-elements | v1.0 | 2026-10-21 | 初始 |
 | 04-audio-track | v1.0 | 2026-10-21 | 初始 |
 | 05-style-benchmark | v1.4.0 | 2026-10-23 | 像素标准+形象标准+音频同步 |
+
+## 统计
+
+- **总计**: 13 个视频 (1 full + 12 主题)
+- **arena 完成**: 11 个 (PR#1-#13)
+- **本地完成**: 2 个 (fear, memory)
+- **全部 check_overlap PASSED**: 13/13
+- **像素标准符合**: 12/13 (full 用 monospace, 其余用 fusion-pixel)
