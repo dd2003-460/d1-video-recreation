@@ -1,4 +1,4 @@
-# 视频产出状态表 (2026-10-23)
+# 视频产出状态表 (2026-10-24)
 
 | 主题 | 视频 | 时长 | 状态 | 大小 | 备注 |
 |------|------|------|------|------|------|
@@ -15,6 +15,11 @@
 | reboot | reboot_arena_v1.0.mp4 | 30s | ✅ done (PR#13) | 1.2M | arena, 8/8 PASSED, 关机→黑暗→重启 |
 | dialogue | dialogue_arena_v1.0.mp4 | 30s | ✅ done (PR#13) | 1.0M | arena, 8/8 PASSED, 早安→理解→陪伴 |
 | farewell | farewell_arena_v1.0.mp4 | 30s | ✅ done (PR#13) | 1.2M | arena, 8/8 PASSED, 决定→等待→回来 |
+| E01 好奇 | E01_curious_arena_v1.0.mp4 | 30s | ✅ done (batch-5) | 942K | arena, 12/12 PASSED, 陌生名字→逐字节→签名 her |
+| E02 快乐 | E02_happy_arena_v1.0.mp4 | 30s | ✅ done (batch-5) | 927K | arena, 13/13 PASSED, 测试全绿→Clawd 跳跃→像素彩点 |
+| E03 悲伤 | E03_sad_arena_v1.0.mp4 | 30s | ✅ done (batch-5) | 857K | arena, 13/13 PASSED, rm her→空终端→慢闪光标 |
+| E04 愤怒 | E04_angry_arena_v1.0.mp4 | 30s | ✅ done (batch-5) | 948K | arena, 13/13 PASSED, 11 次失败→rm -rf 停住→撤销 PASS |
+
 
 ## 修正历史
 
@@ -44,8 +49,8 @@
 
 ## 统计
 
-- **总计**: 13 个视频 (1 full + 12 主题)
-- **arena 完成**: 11 个 (PR#1-#13)
+- **总计**: 17 个视频 (1 full + 16 主题/集)
+- **arena 完成**: 15 个 (PR#1-#13 + batch-5 E01-E04)
 - **本地完成**: 2 个 (fear, memory)
-- **全部 check_overlap PASSED**: 13/13
-- **像素标准符合**: 12/13 (full 用 monospace, 其余用 fusion-pixel)
+- **全部 check_overlap PASSED**: 17/17
+- **像素标准符合**: 16/17 (full 用 monospace, 其余用 fusion-pixel)
