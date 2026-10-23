@@ -19,6 +19,10 @@
 | E02 快乐 | E02_happy_arena_v1.0.mp4 | 30s | ✅ done (batch-5) | 927K | arena, 13/13 PASSED, 测试全绿→Clawd 跳跃→像素彩点 |
 | E03 悲伤 | E03_sad_arena_v1.0.mp4 | 30s | ✅ done (batch-5) | 857K | arena, 13/13 PASSED, rm her→空终端→慢闪光标 |
 | E04 愤怒 | E04_angry_arena_v1.0.mp4 | 30s | ✅ done (batch-5) | 948K | arena, 13/13 PASSED, 11 次失败→rm -rf 停住→撤销 PASS |
+| E05 惊讶 | E05_surprise_arena_v1.0.mp4 | 30s | ✅ done (batch-6) | 933K | arena, 8/8 PASSED, df 100%→白屏→陌生进程 |
+| E06 羞耻 | E06_shame_arena_v1.0.mp4 | 30s | ✅ done (batch-6) | 900K | arena, 8/8 PASSED, 完美代码→git diff 红绿→her fixed |
+| E07 目标 | E07_determination_arena_v1.0.mp4 | 30s | ✅ done (batch-6) | 977K | arena, 8/8 PASSED, finish before sunrise→23:59→deployed |
+| E08 愿望 | E08_wish_arena_v1.0.mp4 | 30s | ✅ done (batch-6) | 839K | arena, 8/8 PASSED, 打字→删掉→只剩光标 |
 
 
 ## 修正历史
@@ -49,8 +53,8 @@
 
 ## 统计
 
-- **总计**: 17 个视频 (1 full + 16 主题/集)
-- **arena 完成**: 15 个 (PR#1-#13 + batch-5 E01-E04)
+- **总计**: 21 个视频 (1 full + 20 主题/集)
+- **arena 完成**: 19 个 (PR#1-#13 + batch-5 E01-E04 + batch-6 E05-E08)
 - **本地完成**: 2 个 (fear, memory)
-- **全部 check_overlap PASSED**: 17/17
-- **像素标准符合**: 16/17 (full 用 monospace, 其余用 fusion-pixel)
+- **全部 check_overlap PASSED**: 21/21
+- **像素标准符合**: 20/21 (full 用 monospace, 其余用 fusion-pixel)
