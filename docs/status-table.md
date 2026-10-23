@@ -11,7 +11,7 @@
 | dream | dream_arena_v1.0.mp4 | 30s | ✅ done (PR#2) | 1.0M | arena |
 | goodbye | goodbye_arena_v1.0.mp4 | 30s | ✅ done (PR#5) | 853K | arena, 13/13 PASSED |
 | companion | companion_arena_v1.0.mp4 | 30s | ✅ done | 1.4M | arena, 15/15 PASSED |
-| error | error_arena_v1.0.mp4 | 30s | 🔄 in_progress | - | arena 工作中 (follow-up 已发) |
+| error | error_arena_v1.0.mp4 | 30s | ✅ done (PR#9) | 1.0M | arena, 13/13 PASSED |
 | reboot | reboot_arena_v1.0.mp4 | 30s | ⏳ pending | - | 第 3 批候选, prompt 待写 |
 | dialogue | dialogue_arena_v1.0.mp4 | 30s | ⏳ pending | - | 第 3 批候选, prompt 待写 |
 | farewell | farewell_arena_v1.0.mp4 | 30s | ⏳ pending | - | 第 3 批候选, prompt 待写 |
