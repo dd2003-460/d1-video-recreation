@@ -4,10 +4,11 @@
   "起点": "batch-5（E01-E04），依据 docs/episodes.md",
   "已完成": "batch-5 E01-E04 + batch-6 E05-E08 + batch-7 E09-E12 + batch-8 E13-E16，累计 29 个视频（status-table.md）",
   "每批流程": "写 arena prompt → push → arena agent mode 执行 → PR 提取 → check_overlap → episodes.md 改 ✅",
-  "进展": "batch-8 完成（arena 01a16c83，分支 arena/c700dd74 @3cca722，16 文件提取，4/4 集 8/8 PASSED）。pfb 合并 2e52d02 已 push。待办：pfb 断点 D 清理 + 用户 m00312 新指令（仓库错误工作回收）",
+  "进展": "batch-8 完成（arena 01a16c83，16 文件提取，4/4 集 8/8 PASSED）。batch-9 前置完成：任务书 d1 898de54 + pfb 中转 838595e（含断点 D 清理）；已投 arena（2026-10-24 20:2x，会话 01a16de0，健康检查通过：任务书在会话内，agent 执行中）。待办：监控 arena 会话 + 用户 m00312 指令（pfb 36 分支扫描+arena 会话删除）",
   "batch-7-episodes": "E09 恐惧/E10 希望/E11 习惯/E12 下意识 ✅ 全部 8/8 PASSED",
   "batch-8-episodes": "E13 思念/E14 嫉妒/E15 原谅/E16 牺牲 ✅ 全部 8/8 PASSED（d1 内 check_overlap exit=0）",
   "batch-8-arena-session": "https://arena.ai/agent/01a16c83-4818-7695-8851-bd67c700dd74 （分支 arena/c700dd74-prompt-first-bench，已合并 pfb main 2e52d02，已提取 d1）",
-  "下一步": "① 用户 m00312：扫描 pfb 36 个 arena 分支 → 有用工作提取到 d1 → 删除对应 arena 会话（分支+网页）；② pfb 断点 D 清理；③ batch-9（E17-E20）写 prompt 投 arena",
+  "batch-9-arena-session": "https://arena.ai/agent/01a16de0-7bb9-7663-8b8f-4066a187d30d （2026-10-24 提交，执行中；监控：snapshot 看 Diff/Checks 与 PR，完成→提取 16 文件→check_overlap→episodes.md ✅→push；卡住>1 轮→降级本地 subagent×4，规格见 tasks/decomposition.md）",
+  "下一步": "① 监控 batch-9 arena 会话 01a16de0 → 完成后提取 4 集文件进 d1 + check_overlap + episodes.md 改 ✅ + push；② 用户 m00312：扫描 pfb 36 个 arena 分支 → 有用工作提取到 d1 → 删除对应 arena 会话（分支+网页，不可逆需确认）；③ batch-10（E21-E24）场景规划",
   "更新": "2026-10-24"
 }
