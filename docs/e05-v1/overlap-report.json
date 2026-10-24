@@ -1,0 +1,75 @@
+{
+  "status": "PASSED",
+  "generatedAt": "2026-10-23T18:31:56.835Z",
+  "title": "E05 Surprise v1.0 Layout & Pixel Check (640×360, 0px tolerance)",
+  "canvas": {
+    "width": 640,
+    "height": 360,
+    "scale": 2,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "fps": 60,
+    "frames": 1800
+  },
+  "terminal": {
+    "x": 100,
+    "y": 140,
+    "w": 440,
+    "h": 200,
+    "titleH": 20
+  },
+  "content": {
+    "x": 102,
+    "y": 160,
+    "w": 436,
+    "h": 180
+  },
+  "summary": {
+    "checksPassed": 8,
+    "checksTotal": 8,
+    "issues": 0
+  },
+  "checks": [
+    {
+      "name": "画布 / 440×200 终端 / Fusion Pixel 10px",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "点阵文字阈值二值化、无抗锯齿灰边 (5 samples)",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "Clawd 40×17 / 4×4 眼睛 + 1×1 高光 / calm·thinking·smile",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "Her 12×28 / 粉色裙子 / companion 原始造型",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "打字完整且逐行串行 (5 lines)",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "逐帧几何 / 0px 重叠 / 无截断 (1800 frames, 28842 instances, 65700 pairs)",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "SCALE=2 严格最近邻 (9 sampled frames)",
+      "status": "PASSED",
+      "issues": []
+    },
+    {
+      "name": "键盘音时间戳帧对齐 (51 clicks)",
+      "status": "PASSED",
+      "issues": []
+    }
+  ],
+  "clicks": 51
+}

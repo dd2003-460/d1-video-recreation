@@ -31,6 +31,10 @@
 | E14 嫉妒 | E14_jealousy_arena_v1.0.mp4 | 30s | ✅ done (batch-8) | 992K | arena, 8/8 PASSED, 日志现 nova-ai→her 也发它消息→Clawd 皱眉 |
 | E15 原谅 | E15_forgiveness_arena_v1.0.mp4 | 30s | ✅ done (batch-8) | 1.1M | arena, 8/8 PASSED, 道歉 unread 7 天→点开→rm complaint.sh |
 | E16 牺牲 | E16_sacrifice_arena_v1.0.mp4 | 30s | ✅ done (batch-8) | 1.1M | arena, 8/8 PASSED, 电量 3%→transfer power→变暗→绿色像素点 |
+| E17 依赖 | E17_dependency_arena_v1.0.mp4 | 30s | ✅ done (batch-9) | 816K | arena, 8/8 PASSED, ping her 24h→无应答→暗屏光标「等待应答。」 |
+| E18 放手 | E18_let_go_arena_v1.0.mp4 | 30s | ✅ done (batch-9) | 927K | arena, 8/8 PASSED, ls her_* 逐个→tar 打包→终端第一次干净「（干净。）」 |
+| E19 反应 | E19_reaction_arena_v1.0.mp4 | 30s | ✅ done (batch-9) | 911K | arena, 8/8 PASSED, ERROR 第 1 帧转头→定位 root cause「（比你快。）」 |
+| E20 记忆 | E20_memory_arena_v1.0.mp4 | 30s | ✅ done (batch-9) | 960K | arena, 8/8 PASSED, df 98%→逐个删 dreams→61% 剩一个不删「（这个不能删。）」 |
 
 
 ## 修正历史
@@ -61,8 +65,8 @@
 
 ## 统计
 
-- **总计**: 29 个视频 (1 full + 28 主题/集)
-- **arena 完成**: 23 个 (PR#1-#13 + batch-5 E01-E04 + batch-6 E05-E08 + batch-8 E13-E16)
+- **总计**: 33 个视频 (1 full + 32 主题/集)
+- **arena 完成**: 27 个 (PR#1-#13 + batch-5 E01-E04 + batch-6 E05-E08 + batch-8 E13-E16 + batch-9 E17-E20)
 - **本地完成**: 6 个 (fear, memory, batch-7 E09-E12)
-- **全部 check_overlap PASSED**: 29/29
-- **像素标准符合**: 28/29 (full 用 monospace, 其余用 fusion-pixel)
+- **全部 check_overlap PASSED**: 33/33
+- **像素标准符合**: 32/33 (full 用 monospace, 其余用 fusion-pixel)
