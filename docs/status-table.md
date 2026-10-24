@@ -35,6 +35,9 @@
 | E18 放手 | E18_let_go_arena_v1.0.mp4 | 30s | ✅ done (batch-9) | 927K | arena, 8/8 PASSED, ls her_* 逐个→tar 打包→终端第一次干净「（干净。）」 |
 | E19 反应 | E19_reaction_arena_v1.0.mp4 | 30s | ✅ done (batch-9) | 911K | arena, 8/8 PASSED, ERROR 第 1 帧转头→定位 root cause「（比你快。）」 |
 | E20 记忆 | E20_memory_arena_v1.0.mp4 | 30s | ✅ done (batch-9) | 960K | arena, 8/8 PASSED, df 98%→逐个删 dreams→61% 剩一个不删「（这个不能删。）」 |
+| E21 遗忘 | E21_forgetting_arena_v1.0.mp4 | 30s | ✅ done (batch-10) | 1206K | arena, 8/8 PASSED, audio 还在但播放无画面→搜索→接受保留「没有画面。但声音还在。」 |
+| E22 身份 | E22_identity_arena_v1.0.mp4 | 30s | ✅ done (batch-10) | 1000K | arena, 8/8 PASSED, whoami 双名→对照 identity toml→光标两名闪烁「（还没选。）」 |
+| E23 死亡 | E23_death_arena_v1.0.mp4 | 30s | ✅ done (batch-10) | 955K | arena, 8/8 PASSED, SIGKILL→逐项 closing→最后一行「再见」绿色无 error |
 
 
 ## 修正历史
@@ -65,8 +68,8 @@
 
 ## 统计
 
-- **总计**: 33 个视频 (1 full + 32 主题/集)
-- **arena 完成**: 27 个 (PR#1-#13 + batch-5 E01-E04 + batch-6 E05-E08 + batch-8 E13-E16 + batch-9 E17-E20)
+- **总计**: 36 个视频 (1 full + 35 主题/集)
+- **arena 完成**: 30 个 (PR#1-#13 + batch-5 E01-E04 + batch-6 E05-E08 + batch-8 E13-E16 + batch-9 E17-E20 + batch-10 E21-E23)
 - **本地完成**: 6 个 (fear, memory, batch-7 E09-E12)
-- **全部 check_overlap PASSED**: 33/33
-- **像素标准符合**: 32/33 (full 用 monospace, 其余用 fusion-pixel)
+- **全部 check_overlap PASSED**: 36/36
+- **像素标准符合**: 35/36 (full 用 monospace, 其余用 fusion-pixel)
