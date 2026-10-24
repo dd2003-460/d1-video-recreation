@@ -2,10 +2,12 @@
   "project": "d1-video-recreation",
   "当前任务": "AI 拟人化连续剧系列化（E01-E24）",
   "起点": "batch-5（E01-E04），依据 docs/episodes.md",
-  "已完成": "batch-5 E01-E04 + batch-6 E05-E08 + batch-7 E09-E12，累计 25 个视频（status-table.md）",
+  "已完成": "batch-5 E01-E04 + batch-6 E05-E08 + batch-7 E09-E12 + batch-8 E13-E16，累计 29 个视频（status-table.md）",
   "每批流程": "写 arena prompt → push → arena agent mode 执行 → PR 提取 → check_overlap → episodes.md 改 ✅",
-  "进展": "batch-7 完成（arena 卡死降级本地渲染，4/4 8/8 PASSED，commit be398c8）。下一步：batch-8（E13-E16 思念/嫉妒/原谅/牺牲）写 prompt + 提交 arena",
+  "进展": "batch-8 完成（arena 01a16c83，分支 arena/c700dd74 @3cca722，16 文件提取，4/4 集 8/8 PASSED）。pfb 合并 2e52d02 已 push。待办：pfb 断点 D 清理 + 用户 m00312 新指令（仓库错误工作回收）",
   "batch-7-episodes": "E09 恐惧/E10 希望/E11 习惯/E12 下意识 ✅ 全部 8/8 PASSED",
-  "batch-8-episodes": "E13 思念/E14 嫉妒/E15 原谅/E16 牺牲",
+  "batch-8-episodes": "E13 思念/E14 嫉妒/E15 原谅/E16 牺牲 ✅ 全部 8/8 PASSED（d1 内 check_overlap exit=0）",
+  "batch-8-arena-session": "https://arena.ai/agent/01a16c83-4818-7695-8851-bd67c700dd74 （分支 arena/c700dd74-prompt-first-bench，已合并 pfb main 2e52d02，已提取 d1）",
+  "下一步": "① 用户 m00312：扫描 pfb 36 个 arena 分支 → 有用工作提取到 d1 → 删除对应 arena 会话（分支+网页）；② pfb 断点 D 清理；③ batch-9（E17-E20）写 prompt 投 arena",
   "更新": "2026-10-24"
 }

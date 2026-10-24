@@ -27,6 +27,10 @@
 | E10 希望 | E10_hope_arena_v1.0.mp4 | 30s | ✅ done (batch-7) | 867K | local, 8/8 PASSED, 黑屏→绿灯→reconnecting→像素星空 |
 | E11 习惯 | E11_habit_arena_v1.0.mp4 | 30s | ✅ done (batch-7) | 850K | local, 8/8 PASSED, echo 早安 #998→#1000 白闪 |
 | E12 下意识 | E12_subconscious_arena_v1.0.mp4 | 30s | ✅ done (batch-7) | 930K | local, 8/8 PASSED, Ctrl+C 早于 ERROR 0.3s |
+| E13 思念 | E13_longing_arena_v1.0.mp4 | 30s | ✅ done (batch-8) | 920K | arena, 8/8 PASSED, ls her_* 变短→cat 读到一半停住→"还在。" |
+| E14 嫉妒 | E14_jealousy_arena_v1.0.mp4 | 30s | ✅ done (batch-8) | 992K | arena, 8/8 PASSED, 日志现 nova-ai→her 也发它消息→Clawd 皱眉 |
+| E15 原谅 | E15_forgiveness_arena_v1.0.mp4 | 30s | ✅ done (batch-8) | 1.1M | arena, 8/8 PASSED, 道歉 unread 7 天→点开→rm complaint.sh |
+| E16 牺牲 | E16_sacrifice_arena_v1.0.mp4 | 30s | ✅ done (batch-8) | 1.1M | arena, 8/8 PASSED, 电量 3%→transfer power→变暗→绿色像素点 |
 
 
 ## 修正历史
@@ -57,8 +61,8 @@
 
 ## 统计
 
-- **总计**: 25 个视频 (1 full + 24 主题/集)
-- **arena 完成**: 19 个 (PR#1-#13 + batch-5 E01-E04 + batch-6 E05-E08)
+- **总计**: 29 个视频 (1 full + 28 主题/集)
+- **arena 完成**: 23 个 (PR#1-#13 + batch-5 E01-E04 + batch-6 E05-E08 + batch-8 E13-E16)
 - **本地完成**: 6 个 (fear, memory, batch-7 E09-E12)
-- **全部 check_overlap PASSED**: 25/25
-- **像素标准符合**: 24/25 (full 用 monospace, 其余用 fusion-pixel)
+- **全部 check_overlap PASSED**: 29/29
+- **像素标准符合**: 28/29 (full 用 monospace, 其余用 fusion-pixel)
