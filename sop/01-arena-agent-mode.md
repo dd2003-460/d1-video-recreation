@@ -153,3 +153,19 @@ await task.finish({ keep: ['p1'] })  // 保留页面让用户看
 - 主题优先级: memory → dream → upgrade → learning (dream/upgrade/learning 已完成 via arena)
 - 新主题候选: 告别 (Goodbye) / 陪伴 (Companion) / 错误 (Error) — 见 docs/new-themes.md
 - ego-browser 发送技巧: tiptap 输入框有时不在 snapshot 中，用 `p1.evaluate()` + IIFE 包装填充
+
+## 七、并发与并行化规则（origin: human · 成璐 m00189 · 2026-10-24）
+
+**总则**：SOP 执行必须严格外包 arena（仅「必须本地」时例外）。但**寻找 / 选择 / 可并行**的任务，应拆分给**多个短上下文 subagent** 并行完成，以提高并发度与总速率。
+
+**三条硬约束**：
+1. **只有可并行的才能并行** — 有先后依赖（后步依赖前步产出）的任务必须串行，不得并行。
+2. **subagent 上下文 + 任务尽可能简洁** — 每个 subagent 只给最小必要上下文 + 单一任务，不灌全量历史 / 无关文件。
+3. **Leader 负责并行判定与拆分** — 是否可并行、如何拆分由 Leader（本会话）决定；subagent 只领单一领域，不自行做并行决策。
+
+**本 SOP 的判定示例**：
+- ✅ 可并行：多集互不依赖（如 batch-9 的 E17/E18/E19/E20 四集）→ 拆给多个 subagent 并行（各自准备任务书 / 盯各自 arena 会话 / 提取各自产物）。
+- ❌ 不可并行：单集内 render → check → audio → mp4（有依赖）→ 串行。
+- ✅ 可并行：多路调研 / 交叉核验 / 多个 arena 会话同时推进。
+
+> 应用说明：batch-9 已作为单任务投 arena（会话 01a16de0），在途不拆；本规则自 batch-10 起的编排与多会话监控开始生效。
