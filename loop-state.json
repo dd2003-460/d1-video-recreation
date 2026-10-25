@@ -1,18 +1,19 @@
 {
   "project": "d1-video-recreation",
-  "当前任务": "AI 拟人化连续剧系列化（E01-E24）",
+  "当前任务": "AI 拟人化连续剧系列化（E01-E24，batch-10 已收官）",
   "起点": "batch-5（E01-E04），依据 docs/episodes.md",
-  "已完成": "batch-5 E01-E04 + batch-6 E05-E08 + batch-7 E09-E12 + batch-8 E13-E16 + batch-9 E17-E20 + batch-10 E21-E23，累计 36 个视频（status-table.md）",
+  "已完成": "batch-5 E01-E04 + batch-6 E05-E08 + batch-7 E09-E12 + batch-8 E13-E16 + batch-9 E17-E20 + batch-10 E21-E24，累计 37 个视频（status-table.md）",
   "每批流程": "写 arena prompt → push → arena agent mode 执行 → 分支提取 → check_overlap → episodes.md 改 ✅",
-  "进展": "batch-9 完成：arena 会话 01a16de0 执行 16m27s，16 文件从分支 arena/a187d30d-prompt-first-bench（d5e5f66）提取进 d1，本地 4 集 check_overlap 全部 8/8 PASSED exit=0，ffprobe 1280×720/30s/含音频。PR #25 有意不合并（避免视频文件再弄脏 pfb main），分支留待 m00312 清理。docs 已回写（episodes.md E17-E20 ✅、status-table 33/33）。",
+  "进展": "batch-10 收官：E21-E23 从 3 分支提取（全 8/8 PASSED）；E24 旧会话 01a16ec2 停摆 47min 作废（分支 arena/ea429b99 远端不存在），按 goal-template §2.1 会话级停摆=重开会话，新会话 01a1737a-9ef4-74b9-b4a5-1c2442a1e0b9 完成 6m39s（PR #29，分支 arena/42a1e0b9-prompt-first-bench），6 文件提取，本地 check_overlap 8/8 PASSED exit=0 + ffprobe 1280×720/30.000000s/aac，mp4 1241771B (1213K)。docs 已回写（episodes.md E24 ✅ + batch-10 ✅ 4/4，status-table 36→37）。",
   "batch-7-episodes": "E09 恐惧/E10 希望/E11 习惯/E12 下意识 ✅ 全部 8/8 PASSED",
   "batch-8-episodes": "E13 思念/E14 嫉妒/E15 原谅/E16 牺牲 ✅ 全部 8/8 PASSED（d1 内 check_overlap exit=0）",
   "batch-9-episodes": "E17 依赖/E18 放手/E19 反应/E20 记忆 ✅ 全部 8/8 PASSED（d1 内 check_overlap exit=0，mp4 816K/927K/911K/960K）",
+  "batch-10-episodes": "E21 遗忘/E22 身份/E23 死亡/E24 重生 ✅ 全部 8/8 PASSED（d1 内 check_overlap exit=0，mp4 1206K/1000K/955K/1213K）",
   "batch-8-arena-session": "https://arena.ai/agent/01a16c83-4818-7695-8851-bd67c700dd74 （分支 arena/c700dd74-prompt-first-bench，已合并 pfb main 2e52d02，已提取 d1）",
   "batch-9-arena-session": "https://arena.ai/agent/01a16de0-7bb9-7663-8b8f-4066a187d30d （完成 16m27s；分支 arena/a187d30d-prompt-first-bench d5e5f66，PR #25 不合并，16 文件已提取 d1）",
   "batch-10-场景规格": "E21 遗忘/E22 身份/E23 死亡/E24 重生 任务卡 4 份（arena-prompts/batch10/E2[1-4]_*.md，d1 976edd7 + pfb 4cf3ab1 双 push）；subagent 写 E22-E24 不稳定 → Lead 直接写（E21 由 subagent 完成）",
-  "batch-10-arena-sessions": "E21 ✅ 完成 5m40s（PR #26，分支 arena/4e1a42d4，1234377B）；E22 ✅ 完成 8m28s（PR #27，分支 arena/248ebbb7，1023625B）；E23 ✅ 完成 14m8s（PR #28，分支 arena/510760ce，978148B）；E24 ⏳ 重开新会话进行中（旧会话 01a16ec2 停摆 47min 且 Cloudflare 拦截恢复页 → 按 goal-template §2.1 会话级停摆=重开会话，新会话 01a1737a-9ef4-74b9-b4a5-1c2442a1e0b9，分支 arena/42a1e0b9-prompt-first-bench，2026-10-25 重发任务卡已在执行）。会话 URL：E21 01a16eb0-36e5-72be-a8c4-a8864e1a42d4 / E22 01a16eb2-d956-7412-acfc-257c248ebbb7 / E23 01a16ebf-dec2-72bd-af5b-e0cf510760ce / E24(重开) 01a1737a-9ef4-74b9-b4a5-1c2442a1e0b9。",
-  "batch-10-进展": "E21-E23 已从 3 分支 git archive 提取 12 文件进 d1，本地 3×check_overlap 全 8/8 PASSED exit=0，ffprobe 全 1280×720/30.000000s/aac；episodes.md E21-E23 ✅、status-table 33→36。E24 旧会话 01a16ec2 停摆作废（分支 arena/ea429b99 远端不存在，无产出），已按 §2.1 重开会话 01a1737a 重发任务卡。",
-  "下一步": "① E24：监控会话 01a1737a → 完成后 fetch arena/42a1e0b9-prompt-first-bench（显式 refspec）→ 提取 4 文件 → check_overlap 8/8 PASSED + ffprobe → episodes E24 ✅ + status-table 36→37 + 回写 push（batch-10 收官，goal 验收①③④达成）；② 用户 m00312：扫描 pfb arena 分支（arena/a187d30d + batch-10 的 4e1a42d4/248ebbb7/510760ce/ea429b99(空)+42a1e0b9）→ 删除 arena 会话+分支（不可逆需确认）；③ goal 验收②「每个 >1MB」与系列基线失准（E23=955K），已报告待用户修正",
-  "更新": "2026-10-25T03:30+08:00"
+  "batch-10-arena-sessions": "E21 ✅ 5m40s（PR #26，arena/4e1a42d4）；E22 ✅ 8m28s（PR #27，arena/248ebbb7）；E23 ✅ 14m8s（PR #28，arena/510760ce）；E24 ✅ 6m39s（PR #29，arena/42a1e0b9）。会话 URL：E21 01a16eb0-36e5-72be-a8c4-a8864e1a42d4 / E22 01a16eb2-d956-7412-acfc-257c248ebbb7 / E23 01a16ebf-dec2-72bd-af5b-e0cf510760ce / E24(重开) 01a1737a-9ef4-74b9-b4a5-1c2442a1e0b9（旧 01a16ec2 停摆作废）",
+  "batch-10-进展": "4 集全部提取 d1 + 本地 4×check_overlap 8/8 PASSED exit=0 + ffprobe 1280×720/30.000000s/aac；episodes.md E21-E24 ✅、batch-10 ✅ 4/4；status-table 36→37（37/37 PASSED，像素标准 36/37）",
+  "下一步": "① 用户 m00312：pfb arena 分支清扫（arena/a187d30d + 4e1a42d4/248ebbb7/510760ce/ea429b99(空)/42a1e0b9）+ arena 会话删除（不可逆需确认）；② goal 验收②「每个 >1MB」与系列基线失准（E23=955K/E22=1000K），已报告待用户修正；③ 启动 batch-11（E25 起，按 goal-template §3 建新 goal）",
+  "更新": "2026-10-25T23:20+08:00"
 }

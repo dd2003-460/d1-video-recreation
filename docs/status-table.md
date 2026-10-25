@@ -38,6 +38,7 @@
 | E21 遗忘 | E21_forgetting_arena_v1.0.mp4 | 30s | ✅ done (batch-10) | 1206K | arena, 8/8 PASSED, audio 还在但播放无画面→搜索→接受保留「没有画面。但声音还在。」 |
 | E22 身份 | E22_identity_arena_v1.0.mp4 | 30s | ✅ done (batch-10) | 1000K | arena, 8/8 PASSED, whoami 双名→对照 identity toml→光标两名闪烁「（还没选。）」 |
 | E23 死亡 | E23_death_arena_v1.0.mp4 | 30s | ✅ done (batch-10) | 955K | arena, 8/8 PASSED, SIGKILL→逐项 closing→最后一行「再见」绿色无 error |
+| E24 重生 | E24_rebirth_arena_v1.0.mp4 | 30s | ✅ done (batch-10) | 1213K | arena, 8/8 PASSED, 空白→第一个字节 16px 定格→hello 逐字+5 圈绿环「hello。」（旧会话停摆按 §2.1 重开） |
 
 
 ## 修正历史
@@ -68,8 +69,8 @@
 
 ## 统计
 
-- **总计**: 36 个视频 (1 full + 35 主题/集)
-- **arena 完成**: 30 个 (PR#1-#13 + batch-5 E01-E04 + batch-6 E05-E08 + batch-8 E13-E16 + batch-9 E17-E20 + batch-10 E21-E23)
+- **总计**: 37 个视频 (1 full + 36 主题/集)
+- **arena 完成**: 31 个 (PR#1-#13 + batch-5 E01-E04 + batch-6 E05-E08 + batch-8 E13-E16 + batch-9 E17-E20 + batch-10 E21-E24)
 - **本地完成**: 6 个 (fear, memory, batch-7 E09-E12)
-- **全部 check_overlap PASSED**: 36/36
-- **像素标准符合**: 35/36 (full 用 monospace, 其余用 fusion-pixel)
+- **全部 check_overlap PASSED**: 37/37
+- **像素标准符合**: 36/37 (full 用 monospace, 其余用 fusion-pixel)
