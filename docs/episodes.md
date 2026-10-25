@@ -57,7 +57,7 @@
 | batch-7 | E09-E12 | ✅ 4/4 PASSED (local) |
 | batch-8 | E13-E16 | ✅ 4/4 PASSED |
 | batch-9 | E17-E20 | ✅ 4/4 PASSED |
-| batch-10 | E21-E24 | ⬜ |
+| batch-10 | E21-E24 | ✅ 4/4 PASSED |
 
 > 每批 4 集 = 1 次 arena 任务（SOP 01：单会话 3-4 集为上限）
 > 完成判据：每集提取到 main + check_overlap PASSED → 本表状态改 ✅
