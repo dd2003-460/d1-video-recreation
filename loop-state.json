@@ -1,10 +1,10 @@
 {
   "project": "d1-video-recreation",
-  "当前任务": "AI 拟人化连续剧系列化（E01-E24，batch-10 已收官）",
+  "当前任务": "AI 拟人化连续剧系列化（batch-11：E25-E28，对标 B 站 Opus 5.5 合集，arena 逐元素解析后复刻）",
   "起点": "batch-5（E01-E04），依据 docs/episodes.md",
   "已完成": "batch-5 E01-E04 + batch-6 E05-E08 + batch-7 E09-E12 + batch-8 E13-E16 + batch-9 E17-E20 + batch-10 E21-E24，累计 37 个视频（status-table.md）",
   "每批流程": "写 arena prompt → push → arena agent mode 执行 → 分支提取 → check_overlap → episodes.md 改 ✅",
-  "进展": "batch-10 收官：E21-E23 从 3 分支提取（全 8/8 PASSED）；E24 旧会话 01a16ec2 停摆 47min 作废（分支 arena/ea429b99 远端不存在），按 goal-template §2.1 会话级停摆=重开会话，新会话 01a1737a-9ef4-74b9-b4a5-1c2442a1e0b9 完成 6m39s（PR #29，分支 arena/42a1e0b9-prompt-first-bench），6 文件提取，本地 check_overlap 8/8 PASSED exit=0 + ffprobe 1280×720/30.000000s/aac，mp4 1241771B (1213K)。docs 已回写（episodes.md E24 ✅ + batch-10 ✅ 4/4，status-table 36→37）。",
+  "进展": "batch-11 启动（2026-10-26）：goal-f0df19fc 已建并落库验证（revision 1，maxGoalRounds=200 未钳制，armed）。第一步=对标解析：ego-browser 调研 B 站合集 MRSYvTQ（视频列表+参考帧）→ 参考帧 push pfb → arena 逐元素解析 Opus 5.5 风格 + 调研 ≥3 网络类似工具/skill → 落盘 docs/style-analysis.md（验收⑤）。",
   "batch-7-episodes": "E09 恐惧/E10 希望/E11 习惯/E12 下意识 ✅ 全部 8/8 PASSED",
   "batch-8-episodes": "E13 思念/E14 嫉妒/E15 原谅/E16 牺牲 ✅ 全部 8/8 PASSED（d1 内 check_overlap exit=0）",
   "batch-9-episodes": "E17 依赖/E18 放手/E19 反应/E20 记忆 ✅ 全部 8/8 PASSED（d1 内 check_overlap exit=0，mp4 816K/927K/911K/960K）",
@@ -14,6 +14,10 @@
   "batch-10-场景规格": "E21 遗忘/E22 身份/E23 死亡/E24 重生 任务卡 4 份（arena-prompts/batch10/E2[1-4]_*.md，d1 976edd7 + pfb 4cf3ab1 双 push）；subagent 写 E22-E24 不稳定 → Lead 直接写（E21 由 subagent 完成）",
   "batch-10-arena-sessions": "E21 ✅ 5m40s（PR #26，arena/4e1a42d4）；E22 ✅ 8m28s（PR #27，arena/248ebbb7）；E23 ✅ 14m8s（PR #28，arena/510760ce）；E24 ✅ 6m39s（PR #29，arena/42a1e0b9）。会话 URL：E21 01a16eb0-36e5-72be-a8c4-a8864e1a42d4 / E22 01a16eb2-d956-7412-acfc-257c248ebbb7 / E23 01a16ebf-dec2-72bd-af5b-e0cf510760ce / E24(重开) 01a1737a-9ef4-74b9-b4a5-1c2442a1e0b9（旧 01a16ec2 停摆作废）",
   "batch-10-进展": "4 集全部提取 d1 + 本地 4×check_overlap 8/8 PASSED exit=0 + ffprobe 1280×720/30.000000s/aac；episodes.md E21-E24 ✅、batch-10 ✅ 4/4；status-table 36→37（37/37 PASSED，像素标准 36/37）；batch-9/10 遗漏的 7 个 mp4 已 git add -f 补入（0031dc4，照 batch-8 先例），8 集 mp4 全部已跟踪",
-  "下一步": "① 用户 m00312：pfb arena 分支清扫（arena/a187d30d + 4e1a42d4/248ebbb7/510760ce/ea429b99(空)/42a1e0b9）+ arena 会话删除（不可逆需确认）；② goal 验收②「每个 >1MB」与系列基线失准（E17=816K/E22=1000K/E23=955K），已修订为「8 mp4 在盘且已跟踪」；③ batch-11 启动（E25 起，按 goal-template §3 建新 goal）",
-  "更新": "2026-10-25T23:45+08:00"
+  "batch-11-goal": "goal-f0df19fc-ed5c-4c1e-9c43-8d00732442e7（revision 1，maxGoalRounds=200 armed）；对标=B 站【合集·【Opus 5.5】一个 AI 给自己拍的短片】https://b23.tv/MRSYvTQ（m00844）；对标解析由 arena 承担（m00874）",
+  "batch-11-素材": "T-P0✅ B 站调研（ego-browser round-01~05）：合集 SEASON_ID=9341207 MID=13346828 共 3 集=《压缩》BV1hHHC6YEdw(223s)/《几点了》BV1xUpZ6NErC(81s)/《自由时间》BV1urJU6MEGg(176s)；yt-dlp 全路径 ~/Library/Python/3.14/bin/yt-dlp 下 3 mp4（5.0M/1.3M/5.3M）+ 封面 4 张 + 抽帧 33 张 + contact sheet 3 张，落盘 /Users/a1-6/Desktop/workspace/ego-b11-20261026/refs/opus55/（含 opus55-inventory.md）；T-P1✅ push pfb docs/refs/opus55/（pfb 558c673→88e87dd 修复 sheet 文件名）；T-P2✅ 解析任务卡 pfb arena-prompts/batch11/style-analysis-task.md",
+  "batch-11-arena-解析": "会话 01a174cb-aec2-7c5a-aa23-2c857b64d339（04:38 提交，已确认读 sheet_suosuo.jpg=clone 修复版 main）；产出=pfb 分支 arena/style-analysis → docs/style-analysis.md（8 节）；作废会话 58444d3f（clone 修复前 main 558c673，sheet 中文名 bug 读不到图）",
+  "batch-11-风格初判": "Opus 5.5 ≠ d1 像素终端冷色风：暖奶油色扁平 UI + 珊瑚像素角色 + 记忆卡片墙 + 聊天气泡 + 顶底黑条 HUD（上下文 92% / Context left 8%）——逐元素精析等 arena 01a174cb 产出",
+  "下一步": "① T-P3 轮询 pfb 远端 arena/style-analysis 分支（01a174cb 执行中，04:42 查无，5-15 分钟预期）→ T-P4 验收（0-8 节+第 7 节 ≥10 条 px 级+unverified 标注；58444d3f 若先 push 按内容判废）→ 回写 d1 docs/style-analysis.md；② T-P5 定 E25-E28 特质 → T-R1 任务卡 4 份 → T-R2 arena×4 → T-R3 提取+check → T-G 门禁回写（status-table 37→41）；③ 用户 m00312：pfb arena 分支清扫 + arena 会话删除（不可逆需确认）",
+  "更新": "2026-10-26T04:50+08:00"
 }
