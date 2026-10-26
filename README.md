@@ -1,4 +1,11 @@
-# prompt-first-bench
+# d1-video-recreation — AI 独白短片复刻（独立仓）
+
+> **独立 git 仓**：origin `github.com/dd2003-460/d1-video-recreation`（外层 workspace 仓经 `.gitignore` 排除，只在仓内 commit/push）。
+> ⚠️ 本 README 为从 `pfb/` 拷贝时遗留的旧文（pfb=prompt-first-bench，是另一份独立仓检出），待按本仓实际内容重写；两者勿混。
+
+---
+
+（以下为 pfb 原文遗留，仅存档，不适用于本仓）
 
 调研目标：**prompt-first 流程（1-loop）究竟有没有提升？对不同 AI 模型提升如何？**
 

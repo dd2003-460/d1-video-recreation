@@ -18,15 +18,19 @@ batch-11 (E25-E28)
 │    pfb 558c673（首次 push）→ 88e87dd（sheet 文件名中文→拼音修复，任务卡引用一致）
 ├─ T-P2 arena 对标解析任务卡 ✅
 │    pfb arena-prompts/batch11/style-analysis-task.md（29 行，8 节规格，≤50 行自包含）
-├─ T-P3 arena 解析会话执行中 ⏳
-│    会话 01a174cb（2026-10-26 04:38 提交，已确认读到 sheet_suosuo.jpg=clone 修复版）
-│    产出 = pfb 分支 arena/style-analysis → docs/style-analysis.md
-│    作废会话：58444d3f（首次脚本运行产生，clone 到修复前 main 558c673，sheet 中文名读不到）
-├─ T-P4 解析验收 + 回写 d1 docs/style-analysis.md（goal 验收⑤）
-├─ T-P5 定 E25-E28 四集剧情/风格特质（基于解析第 7 节，Lead 决定）
-├─ T-R1 任务卡 4 份（参照 batch10 格式，锚点来自 T-P5）
-├─ T-R2 pfb relay push + arena 4 会话提交（ego-browser，独立 space 名）
-├─ T-R3 提取 4 分支 → 本地 4×check_overlap + ffprobe
+├─ T-P3 arena 解析会话 ✅
+│    会话 01a174cb（04:38 提交）→ pfb 分支 arena/7b64d339-prompt-first-bench commit c6d890c
+│    （arena 按会话 id 后 8 位自动命名，非任务卡指定的 arena/style-analysis）
+│    作废会话：58444d3f（首次脚本运行产生，clone 到修复前 main 558c673，sheet 中文名读不到，判废）
+├─ T-P4 解析验收 ✅ + 回写 d1 docs/style-analysis.md（121 行含来源声明，goal 验收⑤ 达成）
+├─ T-P5 定 E25-E28 四集剧情/风格特质 ✅
+│    第五幕「叙」弧线：E25 命名（我是谁）/E26 压缩（记住什么）/E27 时间（你在哪里）/E28 自由时间（我不为谁）
+├─ T-R1 任务卡 4 份 ✅
+│    pfb arena-prompts/batch11/E2{5,6,7,8}_*.md（Opus 5.5 规格锚，不用 render_E16 终端布局）
+├─ T-R2 pfb relay push ✅（88e87dd..f33b94d，style-analysis.md 同批上 main）+ arena 4 会话提交 ✅
+│    05:15 提交全部开跑：E25 01a1750a(→arena/7bbaed62) / E26 01a1750b-18eb(→arena/c352207c)
+│    / E27 01a1750b-ba7b(→arena/3afeff84) / E28 01a1750c(→arena/b350f02b)
+├─ T-R3 提取 4 分支 → 本地 4×check_overlap + ffprobe ⏳
 └─ T-G 门禁 + 回写 episodes.md / status-table.md（37→41）+ push + ls-remote 验证
 ```
 
@@ -48,12 +52,12 @@ batch-11 (E25-E28)
 | T-P0 | B 站素材采集 | ego-browser+yt-dlp | - | ✅ |
 | T-P1 | 素材 push pfb | Lead git | T-P0 | ✅（88e87dd） |
 | T-P2 | 解析任务卡 | Lead 直写 | T-P1 | ✅ |
-| T-P3 | arena 解析会话 | arena agent | T-P2 | ⏳ 01a174cb 执行中 |
-| T-P4 | 解析验收+回写 d1 | Lead git | T-P3 | ⬜ |
-| T-P5 | 定 E25-E28 特质 | Lead（可 subagent 辅助） | T-P4 | ⬜ |
-| T-R1 | 任务卡 4 份 | Lead 直写 | T-P5 | ⬜ |
-| T-R2 | pfb relay + arena×4 | Lead+ego-browser | T-R1 | ⬜ |
-| T-R3 | 提取+check+ffprobe | Lead git | T-R2 | ⬜ |
+| T-P3 | arena 解析会话 | arena agent | T-P2 | ✅ 01a174cb→arena/7b64d339 c6d890c |
+| T-P4 | 解析验收+回写 d1 | Lead git | T-P3 | ✅ style-analysis.md 121 行 |
+| T-P5 | 定 E25-E28 特质 | Lead | T-P4 | ✅ 第五幕「叙」弧线 |
+| T-R1 | 任务卡 4 份 | Lead 直写 | T-P5 | ✅ batch11/E2{5-8}_*.md |
+| T-R2 | pfb relay + arena×4 | Lead+ego-browser | T-R1 | ✅ f33b94d + 4 会话 05:15 开跑 |
+| T-R3 | 提取+check+ffprobe | Lead git | T-R2 | ⏳ 轮询 4 分支中 |
 | T-G | 门禁+回写+push | Lead | T-R3 | ⬜ |
 
 ### 验收（机器检查 = goal 验收①-⑥）
