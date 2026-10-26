@@ -118,8 +118,8 @@ await task.finish({ keep: ['p1'] })  // 保留页面让用户看
 - **SOP 是桥梁**: 你的 SOP 文件就是 arena 的"说明书"，写得越清楚，arena 做得越准
 - **迭代**: 第一次不一定完美，在 arena 里多轮迭代
 - **验证**: arena 做完后必须本地验证（check_overlap + 人工审核）
-- **⚠️ Arena 不能 push 回原仓库** (v1.3.1 教训): arena sandbox 的 git auth 绑定到自己的仓库，无法 push 到 d1-video-recreation。arena 只能在本地工作，结果需要本地手动应用
-- **✅ Arena 可以 push 到自己的仓库** (goodmorning v1.0 成功): arena 会创建分支 `arena/<session-id>-prompt-first-bench` 并 push 到 `dd2003-460/prompt-first-bench` 仓库，然后创建 PR。本地 `git clone` 该仓库 → `git checkout arena/...` → 复制文件到 d1-video-recreation 即可
+- **✅ 新会话直接选 d1-video-recreation 仓库** (2026-10-26 用户实证修正): arena.ai/agent **新会话可以直接切换/选择仓库**（用户实证：会话 01a17723 很容易切到 d1-video-recreation）。**选对仓库是第一原则**：按任务选对应仓库直连，不走 pfb 中转。
+- **⚠️ 历史教训（pfb 中转为旧方案）** (v1.3.1): 旧会话曾遇到 arena sandbox git auth 绑定 pfb 无法 push 回 d1 的问题，当时走 pfb 分支 `arena/<session-id>-prompt-first-bench` 中转。**新任务一律直连目标仓库**，pfb 中转仅用于历史遗留产出的提取清扫。
 - **⚠️ Arena 会改写全局数据** (v1.3.1 教训): arena 在修 bug 时可能重写 LINES/SCENES 等全局数组，导致音频失同步。prompt 必须明确"不要修改 LINES/STARTS/SCENES"
 - **⚠️ React SPA 限制** (v1.3.1 教训): arena 页面是 React SPA，body 文本不会实时更新新内容。ego-browser 的 `document.body.innerText` 可能显示旧内容。用 `p1.snapshot()` 而非 body 文本
 - **✅ 提取代码的正确方式** (goodmorning v1.0 验证):
