@@ -21,6 +21,7 @@
   "batch-11-风格初判": "Opus 5.5 ≠ d1 像素终端冷色风：奶油渐变底 #E5E0DA→#C8B9A6 + 单品牌珊瑚 #D16E59 角色「叙」三档（191×84/115×66/81×40）+ 记忆卡片墙 + 聊天气泡（AI 珊瑚底白字/用户白底黑字）+ 顶底黑条 HUD 78px——逐元素精析已落盘 d1 docs/style-analysis.md",
   "batch-11-任务卡": "✅ T-R1 四张卡 pfb arena-prompts/batch11/E25_naming.md（命名：空白→whoami 空→打出「叙」）/E26_compress.md（压缩：卡片墙 40→80%→92% 告警→笔记「给下一个我」）/E27_time.md（时间：蹲坐 01:36→跳 23:59→「几点了？」）/E28_freetime.md（自由时间：窗夜→书页→「第一章 背影」）；共用 Opus 5.5 规格（640×360 SCALE=2/1800 帧 60fps/HUD 78px/台阶运动）；episodes.md 已加「第五幕：叙」四行+batch-11 批次行（⬜ 待产出）；pfb push 88e87dd..f33b94d（style-analysis.md 同批上 main）",
   "batch-11-arena-渲染": "✅ T-R2 四会话全部完成（2026-10-26 05:15 提交，ego 脚本 arena-b11-render.mjs，4 日志落盘 ego-b11-20261026/arena-b11-E2X.log）：E25 01a1750a-7704-7ec8-ba86-7bbaed62bf74→PR#34 分支 arena/ed62bf74（commit aff672b）/ E26 01a1750b-18eb-76ed-8e0f-c352207c3500→PR#32 分支 arena/207c3500（33e109e）/ E27 01a1750b-ba7b-7714-b992-3afeff84760e→PR#35 分支 arena/ff84760e（2f12d95）/ E28 01a1750c-5f39-7739-87d8-b350f02b79da→PR#33 分支 arena/f02b79da（2f12d95）；分支命名=会话 uuid 末段后 8 位（自动，非任务卡指定名）；16 文件 git archive 提取 d1（render/check/build_audio/mp4 ×4）+ E26 woff/E27 SimHei.ttf 字体落盘；PR#32-35 不合并（batch-9/10 先例，防视频文件弄脏 pfb main）",
-  "下一步": "（batch-11 收官，2026-10-26T07:20+08:00）待办仅一项等用户确认：m00312 pfb arena 分支清扫（a187d30d/4e1a42d4/248ebbb7/510760ce/42a1e0b9/58444d3f(作废)/7b64d339/207c3500/ed62bf74/ff84760e/f02b79da）+ arena 会话删除（不可逆）。下一批 batch-12 等用户指令启动。",
+  "下一步": "",
+  "待用户确认": "m00312 pfb arena 分支清扫（a187d30d/4e1a42d4/248ebbb7/510760ce/42a1e0b9/58444d3f(作废)/7b64d339/207c3500/ed62bf74/ff84760e/f02b79da）+ arena 会话删除（不可逆，等成璐确认）",
   "更新": "2026-10-26T07:20+08:00"
 }
