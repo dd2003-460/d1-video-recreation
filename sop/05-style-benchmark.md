@@ -23,9 +23,9 @@
 ### 视频合集 3: 【Opus 5.5】一个 AI 给自己拍的短片（★ batch-11 起主对标）
 - 合集链接: https://b23.tv/MRSYvTQ （SEASON_ID=9341207, MID=13346828）
 - 集数: 3 集
-  - 《压缩》BV1hHHC6YEdw (223s) — 即上方视频 2，暖奶油「记忆卡片墙」前的上下文耗尽叙事
-  - 《几点了》BV1xUpZ6NErC (81s) — 深藏青夜色双时区对照，台灯暖光 + 墙钟 + 双时间卡片
-  - 《自由时间》BV1urJU6MEGg (176s) — 米纸/旧书页质感散文插图展，线稿大图 + 页边小角色
+  - 《压缩》[BV1hHHC6YEdw](https://www.bilibili.com/video/BV1hHHC6YEdw) (223s) — 即上方视频 2，暖奶油「记忆卡片墙」前的上下文耗尽叙事
+  - 《几点了》[BV1xUpZ6NErC](https://www.bilibili.com/video/BV1xUpZ6NErC) (81s) — 深藏青夜色双时区对照，台灯暖光 + 墙钟 + 双时间卡片
+  - 《自由时间》[BV1urJU6MEGg](https://www.bilibili.com/video/BV1urJU6MEGg) (176s) — 米纸/旧书页质感散文插图展，线稿大图 + 页边小角色
 - 参考帧: `docs/refs/opus55/` (33 帧 + 3 contact sheet + inventory，pfb 侧同步副本 `docs/refs/opus55/`)
 - 逐元素解析（唯一事实源）: `docs/style-analysis.md` (121 行，arena 会话 01a174cb 产出，2026-10-26 回写)
 - 特点: 生活化界面叙事（气泡对话/卡片墙密度/时钟光照推进），非科技感展示
