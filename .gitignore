@@ -33,3 +33,4 @@ src/frames_learning/
 
 # E29 intermediate frames (103MB, 1800 PNGs — regenerable from render script)
 src/frames_E29_companionship_arena/
+src/frames_E30_memory_arena/
