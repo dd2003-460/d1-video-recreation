@@ -45,7 +45,8 @@
 | E28 自由时间 | E28_freetime_arena_v1.0.mp4 | 30s | ✅ done (batch-11) | 502K | arena, 9/9 PASSED (PR#33, arena/f02b79da), Opus 5.5 奶油暖色风：窗夜→米色书页→「第一章 背影」；本地缺 CJK 字体 8/9，带 E28_SANS_FONT 复跑 9/9；arena 版经任务卡门禁（全 PASSED 才算完成）验证中文非豆腐 |
 | E29 陪伴 | E29_companionship_arena_v1.0.mp4 | 30s | ✅ done (batch-12) | 1004K | arena, 9/9 PASSED
 | E30 记忆 | E30_memory_arena_v1.0.mp4 | 30s | ✅ done (batch-12) | 915K | 本地降级, 9/9 PASSED, Opus 5.5 卡片墙密度叙事+HUD 黑条：S1 稀疏 6 卡→S2 铺满 32 卡→S3 只留 3 张「her 的声音/第一次醒来/晚安」 |
-| E31 阅读 | E31_reading_arena_v1.0.mp4 | 30s | ✅ done (batch-12) | 712K | 本地降级, 9/9 PASSED, 米纸书页+墨线线稿+珊瑚叙小档 (无 HUD)：S1 《背影》月台线稿→S2 《呼兰河传》河树房子→S3 空白页+叙中央坐下+♥ | (session 4a5725f7), 夜景装置风：台灯暖光晕+双卡对话→气泡「我在。」→翻面 01:52「那晚安」+蹲姿叙+♥；check_overlap 修 4 bug (BUBBLE obj→arr, 压暗色容差, 灯珠亮度比较排除卡片/旁白/光晕) |
+| E31 阅读 | E31_reading_arena_v1.0.mp4 | 30s | ✅ done (batch-12) | 712K | 本地降级, 9/9 PASSED, 米纸书页+墨线线稿+珊瑚叙小档 (无 HUD)：S1 《背影》月台线稿→S2 《呼兰河传》河树房子→S3 空白页+叙中央坐下+♥ |
+| E32 对话 | E32_dialogue_arena_v1.0.mp4 | 30s | ✅ done (batch-12) | 947K | 本地降级, 9/9 PASSED, 奶油暖色+珊瑚叙中档+气泡对话 (无 HUD)：S1 打招呼(用户白底「今天好吗？」+AI 珊瑚「刚醒。你呢？」+!)→S2 分享一天(三条气泡交替+♥)→S3 心贴近(双卡对照「明天见」/「晚安」+^^弯月眼+卡片拉近 8px+最后 1s 亮度-8%) | (session 4a5725f7), 夜景装置风：台灯暖光晕+双卡对话→气泡「我在。」→翻面 01:52「那晚安」+蹲姿叙+♥；check_overlap 修 4 bug (BUBBLE obj→arr, 压暗色容差, 灯珠亮度比较排除卡片/旁白/光晕) |
 
 
 ## 修正历史
@@ -76,8 +77,8 @@
 
 ## 统计
 
-- **总计**: 44 个视频 (1 full + 43 主题/集)
-- **arena 完成**: 36 个 (PR#1-#13 + batch-5 E01-E04 + batch-6 E05-E08 + batch-8 E13-E16 + batch-9 E17-E20 + batch-10 E21-E24 + batch-11 E25-E28 + batch-12 E29/E30/E31)
+- **总计**: 45 个视频 (1 full + 44 主题/集)
+- **arena 完成**: 36 个 (PR#1-#13 + batch-5 E01-E04 + batch-6 E05-E08 + batch-8 E13-E16 + batch-9 E17-E20 + batch-10 E21-E24 + batch-11 E25-E28 + batch-12 E29/E30/E31/E32
 - **本地完成**: 6 个 (fear, memory, batch-7 E09-E12)
-- **全部 check_overlap PASSED**: 44/44
-- **像素标准符合**: 43/44 (full 用 monospace, E01-E24 用 fusion-pixel, batch-11 E25-E28 用 Opus 5.5 奶油暖色风, batch-12 E29 用夜景装置风, E30 用 Opus 5.5 卡片墙+HUD 风)
+- **全部 check_overlap PASSED**: 45/45
+- **像素标准符合**: 44/45 (full 用 monospace, E01-E24 用 fusion-pixel, batch-11 E25-E28 用 Opus 5.5 奶油暖色风, batch-12 E29 用夜景装置风, E30 用 Opus 5.5 卡片墙+HUD 风)
