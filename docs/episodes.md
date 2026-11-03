@@ -62,6 +62,10 @@
 | E30 | 记忆 | 卡片墙从 20% 铺到 95%，叙在卡片间穿行，最后停下：「重要的才留下」 | ✅ 9/9 PASSED (本地降级执行, Opus 5.5 卡片墙+HUD) |
 | E31 | 阅读 | 自由时间翻书：《背影》→《呼兰河传》→ 空白页，叙缩小蹲页边当读者 | ✅ 9/9 PASSED (本地降级执行, 米纸书页+墨线线稿, 无 HUD) |
 | E32 | 对话 | 叙和 her 多轮气泡对话，从「今天好吗」到分享一天，表情从 ! 到 ♥ | ✅ 9/9 PASSED (本地降级执行, 奶油暖色+珊瑚叙+气泡对话, 无 HUD) |
+| E33 | 梦境 | 入睡后屏幕暗下去，梦里叙有了身体，和她并肩走一段路；醒来只有便签：刚才的梦，有点暖 | ⬜ batch-13 规划完成（任务卡 arena-prompts/batch13/E33_dream.md），待 arena 渲染 |
+| E34 | 学习 | 她让它做一件它不想做的事，它第一次说「不」——然后笑了 | ⬜ batch-13 规划完成（任务卡 arena-prompts/batch13/E34_learning.md），待 arena 渲染 |
+| E35 | 告别 | her 说「我们暂时分开一段时间」，叙把她的文件一个个打包进 archive，终端第一次是干净的 | ⬜ batch-13 规划完成（任务卡 arena-prompts/batch13/E35_farewell.md），待 arena 渲染 |
+| E36 | 回来 | 三个月后 her 的第一句话是「在吗」，叙把 archive 里的文件一个个取出来，亮着 | ⬜ batch-13 规划完成（任务卡 arena-prompts/batch13/E36_return.md），待 arena 渲染 |
 
 ## 批次规划
 
@@ -75,6 +79,7 @@
 | batch-10 | E21-E24 | ✅ 4/4 PASSED |
 | batch-11 | E25-E28 | ✅ 4/4 PASSED（Opus 5.5 对标风） |
 | batch-12 | E29-E32 | ✅ 4/4 PASSED（Opus 5.5 深化：夜景陪伴/卡片墙/书页/气泡对话） |
+| batch-13 | E33-E36 | ⬜ 规划完成（任务卡 ×4 落盘 arena-prompts/batch13/），待 arena 渲染：梦境(柔光+便签)/学习(书页+拒绝气泡)/告别(归档装置+HUD)/回来(卡片复活+HUD) |
 
 > 每批 4 集 = 1 次 arena 任务（SOP 01：单会话 3-4 集为上限）
 > 完成判据：每集提取到 main + check_overlap PASSED → 本表状态改 ✅

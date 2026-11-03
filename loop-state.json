@@ -1,10 +1,10 @@
 {
   "project": "d1-video-recreation",
-  "当前任务": "AI 拟人化连续剧系列化（batch-11：E25-E28，对标 B 站 Opus 5.5 合集，arena 逐元素解析后复刻）",
+  "当前任务": "AI 拟人化连续剧系列化（batch-13：E33-E36，规划完成待 arena 渲染）",
   "起点": "batch-5（E01-E04），依据 docs/episodes.md",
   "已完成": "batch-5 E01-E04 + batch-6 E05-E08 + batch-7 E09-E12 + batch-8 E13-E16 + batch-9 E17-E20 + batch-10 E21-E24 + batch-11 E25-E28（Opus 5.5 对标风），累计 41 个视频（status-table.md，41/41 check_overlap PASSED）",
   "每批流程": "写 arena prompt → push → arena agent mode 执行 → 分支提取 → check_overlap → episodes.md 改 ✅",
-  "进展": "batch-11 收官（2026-10-26）：goal-f0df19fc 全 6 项验收达成——E25 命名/E26 压缩/E27 时间/E28 自由时间四集全部 check_overlap 全 PASSED（9/9·6/6·10/10·9/9 带字体）并提取 d1、status-table 37→41（41/41 PASSED）、docs/style-analysis.md 121 行逐元素解析+≥3 工具调研（验收⑤）。",
+  "进展": "batch-12 收官（2026-11-02 r204+eccff00）：E29-E32 全部 check_overlap PASSED 并提取 d1，status-table 45/45。batch-13 规划落盘（2026-11-03 r271）：E33 梦境/E34 学习/E35 告别/E36 回来四集剧情锚点+任务卡 ×4（arena-prompts/batch13/），episodes.md 加第五幕 E33-E36 行+批次行。",
   "batch-7-episodes": "E09 恐惧/E10 希望/E11 习惯/E12 下意识 ✅ 全部 8/8 PASSED",
   "batch-8-episodes": "E13 思念/E14 嫉妒/E15 原谅/E16 牺牲 ✅ 全部 8/8 PASSED（d1 内 check_overlap exit=0）",
   "batch-9-episodes": "E17 依赖/E18 放手/E19 反应/E20 记忆 ✅ 全部 8/8 PASSED（d1 内 check_overlap exit=0，mp4 816K/927K/911K/960K）",
@@ -23,7 +23,9 @@
   "batch-11-arena-渲染": "✅ T-R2 四会话全部完成（2026-10-26 05:15 提交，ego 脚本 arena-b11-render.mjs，4 日志落盘 ego-b11-20261026/arena-b11-E2X.log）：E25 01a1750a-7704-7ec8-ba86-7bbaed62bf74→PR#34 分支 arena/ed62bf74（commit aff672b）/ E26 01a1750b-18eb-76ed-8e0f-c352207c3500→PR#32 分支 arena/207c3500（33e109e）/ E27 01a1750b-ba7b-7714-b992-3afeff84760e→PR#35 分支 arena/ff84760e（2f12d95）/ E28 01a1750c-5f39-7739-87d8-b350f02b79da→PR#33 分支 arena/f02b79da（2f12d95）；分支命名=会话 uuid 末段后 8 位（自动，非任务卡指定名）；16 文件 git archive 提取 d1（render/check/build_audio/mp4 ×4）+ E26 woff/E27 SimHei.ttf 字体落盘；PR#32-35 不合并（batch-9/10 先例，防视频文件弄脏 pfb main）",
   "batch-12-规划": "✅ 2026-10-26 goal-5b8b0d52 完成：arena 直连 d1 验证成功（会话 01a17723，commit 7878a3c 已 merge main 294d9e2）+ batch-12 规划落盘（E29 陪伴/E30 记忆/E31 阅读/E32 对话，四大视觉装置：夜景陪伴/卡片墙/书页/气泡对话）+ 4 份任务卡 arena-prompts/batch12/（d1 466fac3 push 验证）",
   "batch-12-任务卡": "E29_companionship.md（夜景+台灯+双时区卡片，无HUD）/ E30_memory.md（参数化卡片墙密度叙事，启用HUD黑条）/ E31_reading.md（米纸书页+墨线线稿，无HUD）/ E32_dialogue.md（气泡系统+表情，无HUD）",
-  "下一步": "batch-12 执行：4 个 arena 直连会话渲染 E29-E32 → 提取 4 分支 → 本地 4×check_overlap → 门禁回写 episodes/status-table（41→45）→ push",
+  "下一步": "batch-13 执行：向 arena 直连会话派发 4 张任务卡（每会话 1 集，参照 batch-12 直连模式；登录失效先查工具和网络再处置）→ 提取 4 分支 → 本地 4×check_overlap → 门禁回写 episodes/status-table（45→49）→ push",
   "待用户确认": "m00312 pfb arena 分支清扫（a187d30d/4e1a42d4/248ebbb7/510760ce/42a1e0b9/58444d3f(作废)/7b64d339/207c3500/ed62bf74/ff84760e/f02b79da）+ arena 会话删除（不可逆，等成璐确认）",
-  "更新": "2026-10-26T18:15+08:00"
+  "更新": "2026-11-03T08:30+08:00",
+  "batch-13-规划": "✅ 2026-11-03 r271：四集主题=梦境(柔光渐变+便签)/学习(书页+终端小窗+拒绝气泡)/告别(归档装置+HUD, 卡片打包)/回来(归档盒开盖+卡片复活+HUD)。E33 复用 E29 夜景基准；E34 复用 E31 书页+E32 双卡；E35 复用 E30 卡片墙+HUD 变体；E36 依赖 E35 归档盒装置。叙事线：E35→E36 成对（安放/取回），呼应 E30 压缩主题。",
+  "batch-13-任务卡": "arena-prompts/batch13/E33_dream.md / E34_learning.md / E35_farewell.md / E36_return.md（各 ~80 行自包含：执行步骤+通用技术要求+S1-S3 场景规格+参考文件）"
 }
