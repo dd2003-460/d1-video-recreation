@@ -31,5 +31,12 @@
   "batch-12 执行记录": "E29 arena 直连成功（session 4a5725f7，status-table L46）；E30-E32 本地降级执行（E30 commit msg：arena 7h 无产出）。即 batch-12 实际是 1 arena + 3 local。",
   "batch-13 执行策略": "先试 arena 直连派发 E33（单会话单集，参照 E29 模式）；若 arena 再次长时间无产出（>2h 无分支活动），则按 batch-12 已验证路径本地降级执行全部 4 集（E30-E32 证明本地管线可出 9/9 PASSED）。",
   "batch-13 分支基线": "4 条目标分支 @ 52a5711（基线 7878a3c + 预置参照文件 E29/E30/E31/E32 render，从 main 提取）：arena/batch13-E{33,34,35,36}-d1-video-recreation。任务卡引用的布局基准全部就位（E36 的 render_E35 依赖 E35 产出，任务卡已注明 fallback 到 render_E30）。本地 _prep_batch13_7ff5a6c 临时分支保留待清理。",
-  "batch-13-arena-故障": "2026-11-03 r272：Arena E2B 沙箱平台级故障。8 会话（01a19ede/ee0/ee1/ee2 旧 + 01a19ef1/efa/efb/fc 新）全部 Failed to initialize E2B workspace；fetch_page/web_search 正常但 bash/write_file/read_file 全挂。agent 侧行为正常（读规格、列计划），纯沙箱不可用。E35/E36 新会话甚至创建后加载失败（Something went wrong）。判定：平台故障非任务问题，等恢复或本地降级。"
+  "batch-13-arena-故障": "2026-11-03 r272：Arena E2B 沙箱平台级故障。8 会话（01a19ede/ee0/ee1/ee2 旧 + 01a19ef1/efa/efb/fc 新）全部 Failed to initialize E2B workspace；fetch_page/web_search 正常但 bash/write_file/read_file 全挂。agent 侧行为正常（读规格、列计划），纯沙箱不可用。E35/E36 新会话甚至创建后加载失败（Something went wrong）。判定：平台故障非任务问题，等恢复或本地降级。",
+  "project_id": "d1-video-recreation",
+  "status": "active",
+  "loop_phase": "batch-closed-awaiting-next-batch",
+  "iteration": 13,
+  "last_updated": "2026-11-03T10:45:00+08:00",
+  "last_action": "batch-13 E33-E36 本地降级执行完成 4/4 (arena E2B 沙箱故障), main fca6e22 pushed, 累计 45 视频",
+  "current_task": "无待办 — batch-13 收官，等下一批规划（需成璐定 E37+ 主题或确认新季方向）"
 }
