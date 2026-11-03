@@ -23,12 +23,12 @@
   "batch-11-arena-渲染": "✅ T-R2 四会话全部完成（2026-10-26 05:15 提交，ego 脚本 arena-b11-render.mjs，4 日志落盘 ego-b11-20261026/arena-b11-E2X.log）：E25 01a1750a-7704-7ec8-ba86-7bbaed62bf74→PR#34 分支 arena/ed62bf74（commit aff672b）/ E26 01a1750b-18eb-76ed-8e0f-c352207c3500→PR#32 分支 arena/207c3500（33e109e）/ E27 01a1750b-ba7b-7714-b992-3afeff84760e→PR#35 分支 arena/ff84760e（2f12d95）/ E28 01a1750c-5f39-7739-87d8-b350f02b79da→PR#33 分支 arena/f02b79da（2f12d95）；分支命名=会话 uuid 末段后 8 位（自动，非任务卡指定名）；16 文件 git archive 提取 d1（render/check/build_audio/mp4 ×4）+ E26 woff/E27 SimHei.ttf 字体落盘；PR#32-35 不合并（batch-9/10 先例，防视频文件弄脏 pfb main）",
   "batch-12-规划": "✅ 2026-10-26 goal-5b8b0d52 完成：arena 直连 d1 验证成功（会话 01a17723，commit 7878a3c 已 merge main 294d9e2）+ batch-12 规划落盘（E29 陪伴/E30 记忆/E31 阅读/E32 对话，四大视觉装置：夜景陪伴/卡片墙/书页/气泡对话）+ 4 份任务卡 arena-prompts/batch12/（d1 466fac3 push 验证）",
   "batch-12-任务卡": "E29_companionship.md（夜景+台灯+双时区卡片，无HUD）/ E30_memory.md（参数化卡片墙密度叙事，启用HUD黑条）/ E31_reading.md（米纸书页+墨线线稿，无HUD）/ E32_dialogue.md（气泡系统+表情，无HUD）",
-  "下一步": "batch-13 执行：① ego-browser 开 arena.ai/agent 4 个新会话（每会话选 d1-video-recreation 仓库 + 对应 arena/batch13-E* 分支），各派 1 张任务卡（E33/E34/E35/E36 互不依赖可并行；E36 的 render 参照文件在 main 不在基线——任务卡已注明 fallback 到 render_E30）→ 每轮 keepalive 查 git ls-remote 4 分支 HEAD 是否离开 7878a3c → 有产出则提取+check_overlap+回写门禁；② >2h 无产出的集转本地降级（E30-E32 先例）；③ 每完成一集回写 episodes/status-table（45→49）+ push",
+  "下一步": "batch-13 派发：ego-browser 开 arena.ai/agent 4 个新会话（每会话选 d1-video-recreation 仓库 + 对应 arena/batch13-E* 分支），各派 1 张任务卡全文 → 每轮 keepalive 查 git ls-remote 4 分支 HEAD 是否离开 52a5711 → 有产出则提取+check_overlap+回写门禁；>2h 无产出的集转本地降级。本轮剩余时间做 arena 会话准备（检查 ego-browser 登录态）",
   "待用户确认": "m00312 pfb arena 分支清扫（a187d30d/4e1a42d4/248ebbb7/510760ce/42a1e0b9/58444d3f(作废)/7b64d339/207c3500/ed62bf74/ff84760e/f02b79da）+ arena 会话删除（不可逆，等成璐确认）",
-  "更新": "2026-11-03T08:55+08:00",
+  "更新": "2026-11-03T09:10+08:00",
   "batch-13-规划": "✅ 2026-11-03 r271：四集主题=梦境(柔光渐变+便签)/学习(书页+终端小窗+拒绝气泡)/告别(归档装置+HUD, 卡片打包)/回来(归档盒开盖+卡片复活+HUD)。E33 复用 E29 夜景基准；E34 复用 E31 书页+E32 双卡；E35 复用 E30 卡片墙+HUD 变体；E36 依赖 E35 归档盒装置。叙事线：E35→E36 成对（安放/取回），呼应 E30 压缩主题。",
   "batch-13-任务卡": "arena-prompts/batch13/E33_dream.md / E34_learning.md / E35_farewell.md / E36_return.md（各 ~80 行自包含：执行步骤+通用技术要求+S1-S3 场景规格+参考文件）",
   "batch-12 执行记录": "E29 arena 直连成功（session 4a5725f7，status-table L46）；E30-E32 本地降级执行（E30 commit msg：arena 7h 无产出）。即 batch-12 实际是 1 arena + 3 local。",
   "batch-13 执行策略": "先试 arena 直连派发 E33（单会话单集，参照 E29 模式）；若 arena 再次长时间无产出（>2h 无分支活动），则按 batch-12 已验证路径本地降级执行全部 4 集（E30-E32 证明本地管线可出 9/9 PASSED）。",
-  "batch-13 分支基线": "4 条目标分支已推远端 @ 7878a3c（2026-10-26 arena 直连 d1 首任务 commit，main 祖先，不含 E30-E32 → 新分支 diff 干净）：arena/batch13-E{33,34,35,36}-d1-video-recreation。本地 _baseline_5630f950 保留作对照。"
+  "batch-13 分支基线": "4 条目标分支 @ 52a5711（基线 7878a3c + 预置参照文件 E29/E30/E31/E32 render，从 main 提取）：arena/batch13-E{33,34,35,36}-d1-video-recreation。任务卡引用的布局基准全部就位（E36 的 render_E35 依赖 E35 产出，任务卡已注明 fallback 到 render_E30）。本地 _prep_batch13_7ff5a6c 临时分支保留待清理。"
 }
