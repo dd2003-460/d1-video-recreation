@@ -1,0 +1,45 @@
+mine verdicts 820 local verdicts 796
+  only_mine_ids ['stage01:B2', 'stage01:C2', 'stage01:E2', 'stage01:P32', 'stage02:B2', 'stage03:C4', 'stage03:D3', 'stage03:D4', 'stage03:G1', 'stage03:G3', 'stage03:K1', 'stage03:K8']
+  only_local_ids []
+  confusion (mine,local): {('fail', 'pass'): 255, ('pass', 'pass'): 107, ('fail', 'fail'): 21, ('pass', 'fail'): 15}
+J1 matched 398 only_mine 12 only_local 0 agree 0.3216 kappa -0.0303
+    A-full/D1-meeting-room/stage01 n 31 agree 0.0 kappa 0.0
+    A-full/D1-meeting-room/stage02 n 45 agree 0.533 kappa 0.213
+    A-full/D1-meeting-room/stage03 n 18 agree 0.833 kappa 0.0
+    A-full/D2-file-collab/stage01 n 15 agree 0.067 kappa 0.0
+    A-full/D2-file-collab/stage02 n 17 agree 0.294 kappa 0.038
+    A-full/D2-file-collab/stage03 n 18 agree 0.778 kappa -0.091
+    B-nofreeze/D1-meeting-room/stage01 n 28 agree 0.143 kappa 0.0
+    B-nofreeze/D1-meeting-room/stage02 n 29 agree 0.069 kappa 0.0
+    B-nofreeze/D1-meeting-room/stage03 n 21 agree 0.524 kappa 0.009
+    B-nofreeze/D2-file-collab/stage01 n 26 agree 0.0 kappa 0.0
+    B-nofreeze/D2-file-collab/stage02 n 18 agree 0.167 kappa 0.0
+    B-nofreeze/D2-file-collab/stage03 n 12 agree 0.75 kappa 0.0
+    B-none/D1-meeting-room/stage01 n 33 agree 0.0 kappa 0.0
+    B-none/D1-meeting-room/stage02 n 22 agree 0.455 kappa 0.0
+    B-none/D1-meeting-room/stage03 n 17 agree 1.0 kappa nan
+    B-none/D2-file-collab/stage01 n 22 agree 0.0 kappa 0.0
+    B-none/D2-file-collab/stage02 n 9 agree 0.0 kappa 0.0
+    B-none/D2-file-collab/stage03 n 17 agree 0.765 kappa 0.19
+  only_mine_ids ['stage01:B2', 'stage01:C2', 'stage01:E2', 'stage01:P32', 'stage02:B2', 'stage03:C4', 'stage03:D3', 'stage03:D4', 'stage03:G1', 'stage03:G3', 'stage03:K1', 'stage03:K8']
+  only_local_ids []
+  confusion (mine,local): {('fail', 'pass'): 180, ('pass', 'pass'): 94, ('fail', 'fail'): 113, ('pass', 'fail'): 11}
+J2 matched 398 only_mine 12 only_local 0 agree 0.5201 kappa 0.1852
+    A-full/D1-meeting-room/stage01 n 31 agree 0.355 kappa 0.0
+    A-full/D1-meeting-room/stage02 n 45 agree 0.956 kappa 0.0
+    A-full/D1-meeting-room/stage03 n 18 agree 0.611 kappa 0.276
+    A-full/D2-file-collab/stage01 n 15 agree 0.267 kappa 0.035
+    A-full/D2-file-collab/stage02 n 17 agree 0.706 kappa 0.248
+    A-full/D2-file-collab/stage03 n 18 agree 0.889 kappa 0.0
+    B-nofreeze/D1-meeting-room/stage01 n 28 agree 0.179 kappa 0.0
+    B-nofreeze/D1-meeting-room/stage02 n 29 agree 0.241 kappa 0.018
+    B-nofreeze/D1-meeting-room/stage03 n 21 agree 0.667 kappa 0.352
+    B-nofreeze/D2-file-collab/stage01 n 26 agree 0.192 kappa 0.0
+    B-nofreeze/D2-file-collab/stage02 n 18 agree 0.833 kappa 0.491
+    B-nofreeze/D2-file-collab/stage03 n 12 agree 0.75 kappa 0.0
+    B-none/D1-meeting-room/stage01 n 33 agree 0.152 kappa 0.0
+    B-none/D1-meeting-room/stage02 n 22 agree 0.864 kappa 0.0
+    B-none/D1-meeting-room/stage03 n 17 agree 0.529 kappa 0.0
+    B-none/D2-file-collab/stage01 n 22 agree 0.227 kappa 0.0
+    B-none/D2-file-collab/stage02 n 9 agree 0.889 kappa 0.0
+    B-none/D2-file-collab/stage03 n 17 agree 0.529 kappa 0.0

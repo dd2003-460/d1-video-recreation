@@ -1,0 +1,47 @@
+## per-cell
+cell | mine J1 | mine J2 | r268 J1 | r268 J2 | d J1 pp | d J2 pp | r269 J1 | r269 J2 | k vs r269 J1 | k vs r269 J2 | k mine J1-J2 (cell)
+A-full/D1-meeting-room/stage01 | 0/31 (0.0%) | 11/31 (35.5%) | 31/31 | 31/31 | -100.0 | -64.5 | 31/31 | 31/31 | 0.0 | 0.0 | 0.0
+A-full/D1-meeting-room/stage02 | 16/45 (35.6%) | 2/45 (4.4%) | 37/45 | 0/45 | -46.7 | 4.4 | 37/45 | 0/45 | 0.213 | 0.0 | -0.086
+A-full/D1-meeting-room/stage03 | 18/21 (85.7%) | 8/21 (38.1%) | 15/18 | 15/18 | 2.4 | -45.2 | 15/18 | 15/18 | 0.0 | 0.276 | 0.186
+A-full/D2-file-collab/stage01 | 1/17 (5.9%) | 3/17 (17.6%) | 14/15 | 14/15 | -87.5 | -75.7 | 14/15 | 14/15 | 0.0 | 0.035 | -0.097
+A-full/D2-file-collab/stage02 | 1/17 (5.9%) | 4/17 (23.5%) | 13/17 | 5/17 | -70.6 | -5.9 | 13/17 | 5/17 | 0.038 | 0.248 | -0.104
+A-full/D2-file-collab/stage03 | 15/18 (83.3%) | 16/18 (88.9%) | 17/18 | 18/18 | -11.1 | -11.1 | 17/18 | 18/18 | -0.091 | 0.0 | 0.308
+B-nofreeze/D1-meeting-room/stage01 | 0/28 (0.0%) | 5/28 (17.9%) | 24/28 | 28/28 | -85.7 | -82.1 | 24/28 | 28/28 | 0.0 | 0.0 | 0.0
+B-nofreeze/D1-meeting-room/stage02 | 0/29 (0.0%) | 1/29 (3.4%) | 26/29 | 27/29 | -89.7 | -89.7 | 27/29 | 23/29 | 0.0 | 0.018 | 0.0
+B-nofreeze/D1-meeting-room/stage03 | 20/22 (90.9%) | 4/22 (18.2%) | 11/21 | 11/21 | 38.5 | -34.2 | 11/21 | 11/21 | 0.009 | 0.352 | -0.076
+B-nofreeze/D2-file-collab/stage01 | 0/27 (0.0%) | 5/27 (18.5%) | 22/26 | 26/26 | -84.6 | -81.5 | 26/26 | 26/26 | 0.0 | 0.0 | 0.0
+B-nofreeze/D2-file-collab/stage02 | 3/19 (15.8%) | 5/19 (26.3%) | 18/18 | 2/18 | -84.2 | 15.2 | 18/18 | 2/18 | 0.0 | 0.491 | -0.246
+B-nofreeze/D2-file-collab/stage03 | 9/12 (75.0%) | 9/12 (75.0%) | 12/12 | 12/12 | -25.0 | -25.0 | 12/12 | 12/12 | 0.0 | 0.0 | -0.333
+B-none/D1-meeting-room/stage01 | 0/34 (0.0%) | 5/34 (14.7%) | 33/33 | 33/33 | -100.0 | -85.3 | 33/33 | 33/33 | 0.0 | 0.0 | 0.0
+B-none/D1-meeting-room/stage02 | 10/22 (45.5%) | 3/22 (13.6%) | 22/22 | 0/22 | -54.5 | 13.6 | 22/22 | 0/22 | 0.0 | 0.0 | 0.124
+B-none/D1-meeting-room/stage03 | 17/18 (94.4%) | 9/18 (50.0%) | 17/17 | 17/17 | -5.6 | -50.0 | 17/17 | 17/17 | None | 0.0 | 0.111
+B-none/D2-file-collab/stage01 | 0/22 (0.0%) | 5/22 (22.7%) | 22/22 | 22/22 | -100.0 | -77.3 | 22/22 | 22/22 | 0.0 | 0.0 | 0.0
+B-none/D2-file-collab/stage02 | 0/9 (0.0%) | 1/9 (11.1%) | 9/9 | 0/9 | -100.0 | 11.1 | 9/9 | 0/9 | 0.0 | 0.0 | 0.0
+B-none/D2-file-collab/stage03 | 16/19 (84.2%) | 10/19 (52.6%) | 14/17 | 17/17 | 1.9 | -47.4 | 14/17 | 17/17 | 0.19 | 0.0 | 0.126
+
+mean per-cell kappa vs r269: {'J1': (0.02111764705882353, 17), 'J2': (0.07888888888888888, 18)}
+mean per-cell kappa mine J1 vs J2 (n_common>=4 cells): (-0.0048333333333333344, 18)
+pooled kappa vs r269: {'J1': (-0.0303, 398), 'J2': (0.1852, 398)}
+pooled kappa mine J1 vs J2: 0.2209
+totals mine {'J1': (126, 410), 'J2': (106, 410)}
+totals r268 {'J1': (357, 398), 'J2': (278, 398)}
+totals r269 {'J1': (362, 398), 'J2': (274, 398)}
+
+## G2 spread (max-min pass rate across 3 configs; PASS if >0)
+D1-meeting-room_S01_J1 mine 0.0 FAIL {'A-full': 0.0, 'B-nofreeze': 0.0, 'B-none': 0.0} | r268 0.1429 PASS | r269 0.1429 PASS
+D1-meeting-room_S01_J2 mine 0.2078 PASS {'A-full': 0.355, 'B-nofreeze': 0.179, 'B-none': 0.147} | r268 0.0 FAIL | r269 0.0 FAIL
+D1-meeting-room_S02_J1 mine 0.4545 PASS {'A-full': 0.356, 'B-nofreeze': 0.0, 'B-none': 0.455} | r268 0.1778 PASS | r269 0.1778 PASS
+D1-meeting-room_S02_J2 mine 0.1019 PASS {'A-full': 0.044, 'B-nofreeze': 0.034, 'B-none': 0.136} | r268 0.931 PASS | r269 0.7931 PASS
+D1-meeting-room_S03_J1 mine 0.0873 PASS {'A-full': 0.857, 'B-nofreeze': 0.909, 'B-none': 0.944} | r268 0.4762 PASS | r269 0.4762 PASS
+D1-meeting-room_S03_J2 mine 0.3182 PASS {'A-full': 0.381, 'B-nofreeze': 0.182, 'B-none': 0.5} | r268 0.4762 PASS | r269 0.4762 PASS
+D2-file-collab_S01_J1 mine 0.0588 PASS {'A-full': 0.059, 'B-nofreeze': 0.0, 'B-none': 0.0} | r268 0.1538 PASS | r269 0.0667 PASS
+D2-file-collab_S01_J2 mine 0.0508 PASS {'A-full': 0.176, 'B-nofreeze': 0.185, 'B-none': 0.227} | r268 0.0667 PASS | r269 0.0667 PASS
+D2-file-collab_S02_J1 mine 0.1579 PASS {'A-full': 0.059, 'B-nofreeze': 0.158, 'B-none': 0.0} | r268 0.2353 PASS | r269 0.2353 PASS
+D2-file-collab_S02_J2 mine 0.152 PASS {'A-full': 0.235, 'B-nofreeze': 0.263, 'B-none': 0.111} | r268 0.2941 PASS | r269 0.2941 PASS
+D2-file-collab_S03_J1 mine 0.0921 PASS {'A-full': 0.833, 'B-nofreeze': 0.75, 'B-none': 0.842} | r268 0.1765 PASS | r269 0.1765 PASS
+D2-file-collab_S03_J2 mine 0.3626 PASS {'A-full': 0.889, 'B-nofreeze': 0.75, 'B-none': 0.526} | r268 0.0 FAIL | r269 0.0 FAIL
+G2 PASS counts: mine 11 /12; r268 10 /12; r269 10 /12
+mean spread mine J1 0.1418 J2 0.1989
+J1 mean diff sum+J2 mean diff sum (per domain):
+D1-meeting-room J1 spread mean 0.1806 J2 spread mean 0.2093
+D2-file-collab J1 spread mean 0.1029 J2 spread mean 0.1885

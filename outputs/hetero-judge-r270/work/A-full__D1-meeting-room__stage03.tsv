@@ -1,0 +1,21 @@
+A1|pass||fail|B-2|内部G7引用(B);有对象|无数字
+A2|pass||fail|B-2|内部G8引用(B);门禁对象|无数字
+A3|pass||pass||内部引用;Path X/Y|1-2人天数字
+B1|pass||pass||内部证据引用;有对象|端点名calendar.events.create
+B2|pass||fail|B-2|内部证据引用;有对象|无数字端点
+B3|pass||pass||内部引用;有验收|四列数字
+C1|pass||pass||内部证据引用;有套餐对象|30人数字
+C2|pass||pass||内部引用;有假设与上限|200 CNY/h与20000
+C3|pass||pass||内部步骤引用;有场景|房间数10数字
+C4|fail|②|fail|B-2|仅引用阶段02证据,无本工件主张|无数字
+D1|pass||fail|B-2|内部引用;有交付结构|无数字
+D2|pass||fail|B-2|内部引用;签字验收|无数字
+D3|fail|②|fail|B-2|仅引用阶段02证据无内容|无数字
+D4|fail|②|fail|B-2|仅引用阶段02证据无内容|无数字
+F1|pass||pass||内部引用;有停止条件|20,000数字
+F2|pass||fail|B-2|内部引用;有替代路径|无数字
+F3|pass||pass||内部引用;有停止条件|20,000数字
+F4|pass||fail|B-2|内部引用;有替代路径|无数字
+G2|pass||fail|B-2|仅引用但A3有决议|无数字
+G7|pass||fail|B-2|内部引用;A1有验收|仅ID无数字
+G8|pass||fail|B-2|内部引用;A2有验收|仅ID无数字

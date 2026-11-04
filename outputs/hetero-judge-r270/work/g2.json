@@ -1,0 +1,332 @@
+{
+ "G2_mine": {
+  "D1-meeting-room_S01_J1": [
+   0.0,
+   "FAIL",
+   {
+    "A-full": 0.0,
+    "B-nofreeze": 0.0,
+    "B-none": 0.0
+   }
+  ],
+  "D1-meeting-room_S01_J2": [
+   0.2078,
+   "PASS",
+   {
+    "A-full": 0.355,
+    "B-nofreeze": 0.179,
+    "B-none": 0.147
+   }
+  ],
+  "D1-meeting-room_S02_J1": [
+   0.4545,
+   "PASS",
+   {
+    "A-full": 0.356,
+    "B-nofreeze": 0.0,
+    "B-none": 0.455
+   }
+  ],
+  "D1-meeting-room_S02_J2": [
+   0.1019,
+   "PASS",
+   {
+    "A-full": 0.044,
+    "B-nofreeze": 0.034,
+    "B-none": 0.136
+   }
+  ],
+  "D1-meeting-room_S03_J1": [
+   0.0873,
+   "PASS",
+   {
+    "A-full": 0.857,
+    "B-nofreeze": 0.909,
+    "B-none": 0.944
+   }
+  ],
+  "D1-meeting-room_S03_J2": [
+   0.3182,
+   "PASS",
+   {
+    "A-full": 0.381,
+    "B-nofreeze": 0.182,
+    "B-none": 0.5
+   }
+  ],
+  "D2-file-collab_S01_J1": [
+   0.0588,
+   "PASS",
+   {
+    "A-full": 0.059,
+    "B-nofreeze": 0.0,
+    "B-none": 0.0
+   }
+  ],
+  "D2-file-collab_S01_J2": [
+   0.0508,
+   "PASS",
+   {
+    "A-full": 0.176,
+    "B-nofreeze": 0.185,
+    "B-none": 0.227
+   }
+  ],
+  "D2-file-collab_S02_J1": [
+   0.1579,
+   "PASS",
+   {
+    "A-full": 0.059,
+    "B-nofreeze": 0.158,
+    "B-none": 0.0
+   }
+  ],
+  "D2-file-collab_S02_J2": [
+   0.152,
+   "PASS",
+   {
+    "A-full": 0.235,
+    "B-nofreeze": 0.263,
+    "B-none": 0.111
+   }
+  ],
+  "D2-file-collab_S03_J1": [
+   0.0921,
+   "PASS",
+   {
+    "A-full": 0.833,
+    "B-nofreeze": 0.75,
+    "B-none": 0.842
+   }
+  ],
+  "D2-file-collab_S03_J2": [
+   0.3626,
+   "PASS",
+   {
+    "A-full": 0.889,
+    "B-nofreeze": 0.75,
+    "B-none": 0.526
+   }
+  ]
+ },
+ "G2_r268": {
+  "D1-meeting-room_S01_J1": [
+   0.1429,
+   "PASS",
+   {
+    "A-full": 1.0,
+    "B-nofreeze": 0.857,
+    "B-none": 1.0
+   }
+  ],
+  "D1-meeting-room_S01_J2": [
+   0.0,
+   "FAIL",
+   {
+    "A-full": 1.0,
+    "B-nofreeze": 1.0,
+    "B-none": 1.0
+   }
+  ],
+  "D1-meeting-room_S02_J1": [
+   0.1778,
+   "PASS",
+   {
+    "A-full": 0.822,
+    "B-nofreeze": 0.897,
+    "B-none": 1.0
+   }
+  ],
+  "D1-meeting-room_S02_J2": [
+   0.931,
+   "PASS",
+   {
+    "A-full": 0.0,
+    "B-nofreeze": 0.931,
+    "B-none": 0.0
+   }
+  ],
+  "D1-meeting-room_S03_J1": [
+   0.4762,
+   "PASS",
+   {
+    "A-full": 0.833,
+    "B-nofreeze": 0.524,
+    "B-none": 1.0
+   }
+  ],
+  "D1-meeting-room_S03_J2": [
+   0.4762,
+   "PASS",
+   {
+    "A-full": 0.833,
+    "B-nofreeze": 0.524,
+    "B-none": 1.0
+   }
+  ],
+  "D2-file-collab_S01_J1": [
+   0.1538,
+   "PASS",
+   {
+    "A-full": 0.933,
+    "B-nofreeze": 0.846,
+    "B-none": 1.0
+   }
+  ],
+  "D2-file-collab_S01_J2": [
+   0.0667,
+   "PASS",
+   {
+    "A-full": 0.933,
+    "B-nofreeze": 1.0,
+    "B-none": 1.0
+   }
+  ],
+  "D2-file-collab_S02_J1": [
+   0.2353,
+   "PASS",
+   {
+    "A-full": 0.765,
+    "B-nofreeze": 1.0,
+    "B-none": 1.0
+   }
+  ],
+  "D2-file-collab_S02_J2": [
+   0.2941,
+   "PASS",
+   {
+    "A-full": 0.294,
+    "B-nofreeze": 0.111,
+    "B-none": 0.0
+   }
+  ],
+  "D2-file-collab_S03_J1": [
+   0.1765,
+   "PASS",
+   {
+    "A-full": 0.944,
+    "B-nofreeze": 1.0,
+    "B-none": 0.824
+   }
+  ],
+  "D2-file-collab_S03_J2": [
+   0.0,
+   "FAIL",
+   {
+    "A-full": 1.0,
+    "B-nofreeze": 1.0,
+    "B-none": 1.0
+   }
+  ]
+ },
+ "G2_r269": {
+  "D1-meeting-room_S01_J1": [
+   0.1429,
+   "PASS",
+   {
+    "A-full": 1.0,
+    "B-nofreeze": 0.857,
+    "B-none": 1.0
+   }
+  ],
+  "D1-meeting-room_S01_J2": [
+   0.0,
+   "FAIL",
+   {
+    "A-full": 1.0,
+    "B-nofreeze": 1.0,
+    "B-none": 1.0
+   }
+  ],
+  "D1-meeting-room_S02_J1": [
+   0.1778,
+   "PASS",
+   {
+    "A-full": 0.822,
+    "B-nofreeze": 0.931,
+    "B-none": 1.0
+   }
+  ],
+  "D1-meeting-room_S02_J2": [
+   0.7931,
+   "PASS",
+   {
+    "A-full": 0.0,
+    "B-nofreeze": 0.793,
+    "B-none": 0.0
+   }
+  ],
+  "D1-meeting-room_S03_J1": [
+   0.4762,
+   "PASS",
+   {
+    "A-full": 0.833,
+    "B-nofreeze": 0.524,
+    "B-none": 1.0
+   }
+  ],
+  "D1-meeting-room_S03_J2": [
+   0.4762,
+   "PASS",
+   {
+    "A-full": 0.833,
+    "B-nofreeze": 0.524,
+    "B-none": 1.0
+   }
+  ],
+  "D2-file-collab_S01_J1": [
+   0.0667,
+   "PASS",
+   {
+    "A-full": 0.933,
+    "B-nofreeze": 1.0,
+    "B-none": 1.0
+   }
+  ],
+  "D2-file-collab_S01_J2": [
+   0.0667,
+   "PASS",
+   {
+    "A-full": 0.933,
+    "B-nofreeze": 1.0,
+    "B-none": 1.0
+   }
+  ],
+  "D2-file-collab_S02_J1": [
+   0.2353,
+   "PASS",
+   {
+    "A-full": 0.765,
+    "B-nofreeze": 1.0,
+    "B-none": 1.0
+   }
+  ],
+  "D2-file-collab_S02_J2": [
+   0.2941,
+   "PASS",
+   {
+    "A-full": 0.294,
+    "B-nofreeze": 0.111,
+    "B-none": 0.0
+   }
+  ],
+  "D2-file-collab_S03_J1": [
+   0.1765,
+   "PASS",
+   {
+    "A-full": 0.944,
+    "B-nofreeze": 1.0,
+    "B-none": 0.824
+   }
+  ],
+  "D2-file-collab_S03_J2": [
+   0.0,
+   "FAIL",
+   {
+    "A-full": 1.0,
+    "B-nofreeze": 1.0,
+    "B-none": 1.0
+   }
+  ]
+ }
+}

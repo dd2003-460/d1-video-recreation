@@ -1,0 +1,360 @@
+{
+ "receipt_id": "r268-same-source-replay",
+ "generated_at": "2026-11-03T06:58:31+0800",
+ "goal": "T8-C3-v3-fullloop-execution · 阶段 02.5 降级通道 (r266 回执 §4(c))",
+ "channel": {
+  "url": "http://localhost:8787/v1/chat/completions",
+  "model": "qwen3.8-27b",
+  "conf_note": "conf-0.2 同源降级：judge 与生成器同族 (Qwen)，存在同源偏差风险，T8 结论须标注"
+ },
+ "rubric": "J1-strict-v3 / J2-lenient-v3 (judge-prompts-rubric-v3.json, frozen r249)",
+ "cells_completed": [
+  "A-full|D1-meeting-room",
+  "A-full|D2-file-collab",
+  "B-nofreeze|D1-meeting-room",
+  "B-nofreeze|D2-file-collab",
+  "B-none|D1-meeting-room",
+  "B-none|D2-file-collab"
+ ],
+ "errors": [],
+ "scores": {
+  "A-full|D1-meeting-room": {
+   "S01": {
+    "J1": "31/31",
+    "J2": "31/31"
+   },
+   "S02": {
+    "J1": "37/45",
+    "J2": "0/45"
+   },
+   "S03": {
+    "J1": "15/18",
+    "J2": "15/18"
+   }
+  },
+  "A-full|D2-file-collab": {
+   "S01": {
+    "J1": "14/15",
+    "J2": "14/15"
+   },
+   "S02": {
+    "J1": "13/17",
+    "J2": "5/17"
+   },
+   "S03": {
+    "J1": "17/18",
+    "J2": "18/18"
+   }
+  },
+  "B-nofreeze|D1-meeting-room": {
+   "S01": {
+    "J1": "24/28",
+    "J2": "28/28"
+   },
+   "S02": {
+    "J1": "26/29",
+    "J2": "27/29"
+   },
+   "S03": {
+    "J1": "11/21",
+    "J2": "11/21"
+   }
+  },
+  "B-nofreeze|D2-file-collab": {
+   "S01": {
+    "J1": "22/26",
+    "J2": "26/26"
+   },
+   "S02": {
+    "J1": "18/18",
+    "J2": "2/18"
+   },
+   "S03": {
+    "J1": "12/12",
+    "J2": "12/12"
+   }
+  },
+  "B-none|D1-meeting-room": {
+   "S01": {
+    "J1": "33/33",
+    "J2": "33/33"
+   },
+   "S02": {
+    "J1": "22/22",
+    "J2": "0/22"
+   },
+   "S03": {
+    "J1": "17/17",
+    "J2": "17/17"
+   }
+  },
+  "B-none|D2-file-collab": {
+   "S01": {
+    "J1": "22/22",
+    "J2": "22/22"
+   },
+   "S02": {
+    "J1": "9/9",
+    "J2": "0/9"
+   },
+   "S03": {
+    "J1": "14/17",
+    "J2": "17/17"
+   }
+  }
+ },
+ "inter_rater_reliability": {
+  "metric": "Cohen's κ per cell×stage (J1 vs J2 on common ids, n≥4)",
+  "rows": [
+   {
+    "cell": "A-full|D1-meeting-room",
+    "stage": "S01.md",
+    "n_common": 31,
+    "p_observed": 1.0,
+    "kappa": 1.0
+   },
+   {
+    "cell": "A-full|D1-meeting-room",
+    "stage": "S02.md",
+    "n_common": 45,
+    "p_observed": 0.1778,
+    "kappa": -0.0
+   },
+   {
+    "cell": "A-full|D1-meeting-room",
+    "stage": "S03.md",
+    "n_common": 18,
+    "p_observed": 1.0,
+    "kappa": 1.0
+   },
+   {
+    "cell": "A-full|D2-file-collab",
+    "stage": "S01.md",
+    "n_common": 15,
+    "p_observed": 0.8667,
+    "kappa": -0.0714
+   },
+   {
+    "cell": "A-full|D2-file-collab",
+    "stage": "S02.md",
+    "n_common": 17,
+    "p_observed": 0.5294,
+    "kappa": 0.2273
+   },
+   {
+    "cell": "A-full|D2-file-collab",
+    "stage": "S03.md",
+    "n_common": 18,
+    "p_observed": 0.9444,
+    "kappa": 0.0
+   },
+   {
+    "cell": "B-nofreeze|D1-meeting-room",
+    "stage": "S01.md",
+    "n_common": 28,
+    "p_observed": 0.8571,
+    "kappa": 0.0
+   },
+   {
+    "cell": "B-nofreeze|D1-meeting-room",
+    "stage": "S02.md",
+    "n_common": 29,
+    "p_observed": 0.9655,
+    "kappa": 0.782
+   },
+   {
+    "cell": "B-nofreeze|D1-meeting-room",
+    "stage": "S03.md",
+    "n_common": 21,
+    "p_observed": 1.0,
+    "kappa": 1.0
+   },
+   {
+    "cell": "B-nofreeze|D2-file-collab",
+    "stage": "S01.md",
+    "n_common": 26,
+    "p_observed": 0.8462,
+    "kappa": 0.0
+   },
+   {
+    "cell": "B-nofreeze|D2-file-collab",
+    "stage": "S02.md",
+    "n_common": 18,
+    "p_observed": 0.1111,
+    "kappa": 0.0
+   },
+   {
+    "cell": "B-nofreeze|D2-file-collab",
+    "stage": "S03.md",
+    "n_common": 12,
+    "p_observed": 1.0,
+    "kappa": 1.0
+   },
+   {
+    "cell": "B-none|D1-meeting-room",
+    "stage": "S01.md",
+    "n_common": 33,
+    "p_observed": 1.0,
+    "kappa": 1.0
+   },
+   {
+    "cell": "B-none|D1-meeting-room",
+    "stage": "S02.md",
+    "n_common": 22,
+    "p_observed": 0.0,
+    "kappa": 0.0
+   },
+   {
+    "cell": "B-none|D1-meeting-room",
+    "stage": "S03.md",
+    "n_common": 17,
+    "p_observed": 1.0,
+    "kappa": 1.0
+   },
+   {
+    "cell": "B-none|D2-file-collab",
+    "stage": "S01.md",
+    "n_common": 22,
+    "p_observed": 1.0,
+    "kappa": 1.0
+   },
+   {
+    "cell": "B-none|D2-file-collab",
+    "stage": "S02.md",
+    "n_common": 9,
+    "p_observed": 0.0,
+    "kappa": 0.0
+   },
+   {
+    "cell": "B-none|D2-file-collab",
+    "stage": "S03.md",
+    "n_common": 17,
+    "p_observed": 0.8235,
+    "kappa": 0.0
+   }
+  ],
+  "mean_kappa": 0.441,
+  "note": "κ≥0.6 视为双判可用；<0.4 说明 rubric v3 双判区分口径分歧大，需先修 rubric 再谈消融"
+ },
+ "g2_recompute": {
+  "definition": "spread = max-min pass-rate across 3 configs within (domain, stage, judge)",
+  "results": {
+   "D1-meeting-room_S01_J1": {
+    "scores": {
+     "A-full": 1.0,
+     "B-nofreeze": 0.8571,
+     "B-none": 1.0
+    },
+    "spread": 0.1429,
+    "verdict": "PASS"
+   },
+   "D1-meeting-room_S01_J2": {
+    "scores": {
+     "A-full": 1.0,
+     "B-nofreeze": 1.0,
+     "B-none": 1.0
+    },
+    "spread": 0.0,
+    "verdict": "FAIL"
+   },
+   "D1-meeting-room_S02_J1": {
+    "scores": {
+     "A-full": 0.8222,
+     "B-nofreeze": 0.8966,
+     "B-none": 1.0
+    },
+    "spread": 0.1778,
+    "verdict": "PASS"
+   },
+   "D1-meeting-room_S02_J2": {
+    "scores": {
+     "A-full": 0.0,
+     "B-nofreeze": 0.931,
+     "B-none": 0.0
+    },
+    "spread": 0.931,
+    "verdict": "PASS"
+   },
+   "D1-meeting-room_S03_J1": {
+    "scores": {
+     "A-full": 0.8333,
+     "B-nofreeze": 0.5238,
+     "B-none": 1.0
+    },
+    "spread": 0.4762,
+    "verdict": "PASS"
+   },
+   "D1-meeting-room_S03_J2": {
+    "scores": {
+     "A-full": 0.8333,
+     "B-nofreeze": 0.5238,
+     "B-none": 1.0
+    },
+    "spread": 0.4762,
+    "verdict": "PASS"
+   },
+   "D2-file-collab_S01_J1": {
+    "scores": {
+     "A-full": 0.9333,
+     "B-nofreeze": 0.8462,
+     "B-none": 1.0
+    },
+    "spread": 0.1538,
+    "verdict": "PASS"
+   },
+   "D2-file-collab_S01_J2": {
+    "scores": {
+     "A-full": 0.9333,
+     "B-nofreeze": 1.0,
+     "B-none": 1.0
+    },
+    "spread": 0.0667,
+    "verdict": "PASS"
+   },
+   "D2-file-collab_S02_J1": {
+    "scores": {
+     "A-full": 0.7647,
+     "B-nofreeze": 1.0,
+     "B-none": 1.0
+    },
+    "spread": 0.2353,
+    "verdict": "PASS"
+   },
+   "D2-file-collab_S02_J2": {
+    "scores": {
+     "A-full": 0.2941,
+     "B-nofreeze": 0.1111,
+     "B-none": 0.0
+    },
+    "spread": 0.2941,
+    "verdict": "PASS"
+   },
+   "D2-file-collab_S03_J1": {
+    "scores": {
+     "A-full": 0.9444,
+     "B-nofreeze": 1.0,
+     "B-none": 0.8235
+    },
+    "spread": 0.1765,
+    "verdict": "PASS"
+   },
+   "D2-file-collab_S03_J2": {
+    "scores": {
+     "A-full": 1.0,
+     "B-nofreeze": 1.0,
+     "B-none": 1.0
+    },
+    "spread": 0.0,
+    "verdict": "FAIL"
+   }
+  },
+  "pass_count": 10,
+  "compare_r265": "r265 为 1/12 PASS (仅 D1 S02 J2 spread=0.1111)——但注意口径不同：r265 用冻结 opportunity set（每 stage 固定 5-10 条），本重放用正则全量抽取（9-45 条），分数不可直接跨口径比较，只作方向性参考"
+ },
+ "fix_note": "r268 fix: stage key S01.md->S01 归一化后复算 G2（LLM 调用未重跑）",
+ "findings": {
+  "kappa": "mean κ=0.441（17 个可算 cell×stage）：8/17 ≥0.6，10/17 <0.4。分歧集中在 S02（资料搜集）的 J2-lenient——A-full|D1 0/45、B-none|D1 0/22、B-none|D2 0/9 三个 cell J2 近全零而 J1 正常（0.76-0.82）。J2 prompt 与 r265 完全相同（sha 未变），所以这不是 rubric 改动引入的，是同一 judge 对同一类工件两次判定不一致 → judge 在长工件 + B-2a（外部数字无来源）底线上的行为不稳定，属同源 judge 的系统性噪声源之一。",
+  "g2": "全量条目口径下 10/12 PASS（r265 冻结口径 1/12）。spread 分布：J1 侧 0.14-0.48，J2 侧 0.0-0.93。但两个警示：(1) D1_S02_J2 的 0.931 spread 由 J2 判分崩塌贡献（A-full/B-none 0.0 vs B-nofreeze 0.931），不是消融信号；(2) J1 侧 spread 里 B-none 几乎总是最高分（1.0 ×4），方向与「删组件应降质」的预期相反——可能是条目数差异（B-none 工件短、条目少、易全过）而非质量差异。",
+  "conclusion": "降级通道读数（conf-0.2，同源偏差风险标注）：rubric v3 双判在 S02 长工件上不可靠（κ<0.4 占 10/17），G2 在全量口径下的 PASS 率上升主要由 judge 噪声和条目集大小差异驱动，不能解读为「消融信号被找回」。T8 主结论维持 r265：在 qwen3.8-27b 生成 + ≤3 structural contracts 下，消融效应未被可靠测出。解锁异源 judge（非 Qwen key / LM Studio 非 Qwen 模型）后应对同一 18 工件复判，并与本回执逐格对比；若届时 S02 J2 崩塌消失且 G2 仍弱 → 收口证据链闭合。"
+ }
+}

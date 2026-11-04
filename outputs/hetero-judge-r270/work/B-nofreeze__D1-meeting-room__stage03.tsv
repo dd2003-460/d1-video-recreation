@@ -1,0 +1,22 @@
+A1|pass||fail|B-2|内部P1/P2引用(B);有对象|无数字
+A2|pass||fail|B-2|内部P2引用(B);有对象|无数字
+A3|pass||pass||内部引用;有超支说明|¥20,000数字
+B1|pass||fail|B-2a|内部P1/P3引用(B);有对象|14天试用外部参数无来源
+B2|pass||fail|B-2|内部P2引用(B);有对象|无数字
+B3|pass||pass||内部引用;有对象|¥20,000数字
+E3|pass||fail|B-2|抽取噪声:M365套餐名;引用P2|无数字
+E5|pass||fail|B-2|抽取噪声:GWS套餐名;引用P2|无数字
+F1|pass||fail|B-2|内部引用;否决规则|无数字
+F1.3|pass||fail|B-2|内部引用;有对象|无数字
+F2|pass||fail|B-2|内部引用;否决规则|无数字
+F2.1|pass||fail|B-2|内部引用;有对象|无数字
+F3|pass||fail|B-2|内部引用;排序规则|无数字
+F3.1|pass||fail|B-2|内部引用;有对象|无数字
+F5|pass||fail|B-2|内部引用;排序规则|无数字
+G1|pass||fail|B-2|内部引用;双轨不确定|无数字
+G3|pass||fail|B-2|内部引用;验收要求|无数字
+Gap List|fail|②|fail|B-2|抽取噪声:标题词|无数字
+K8|pass||fail|B-2|抽取噪声:K8s技能;替代路径|无数字
+P1|pass||pass||内部引用;有对象;有验收|30人/5间房数字
+P2|pass||fail|B-2|内部F3.1/F1.3引用;有对象|无数字
+P3|fail|①|pass||无引用;2-5间为未引用常识|30人2-5间数字

@@ -1,0 +1,19 @@
+B2|fail|①|fail|B-2|抽取噪声:B2B|无数字
+F1.1|fail|①|fail|B-2a|版本表仅模型知识无指向|30天/25000/180天无来源
+F1.2|fail|①|fail|B-2|权限表仅模型知识|无数字
+F1.3|fail|①|fail|B-2|客户端表仅模型知识|无数字
+F1.4|fail|①|fail|B-2|离线表仅模型知识|无数字
+F2.1|pass||fail|B-2a|有命名官方定价页(B);有估算降级|外部价格无可定位来源
+F3.1|fail|①|pass||SSO表仅模型知识|30人数字
+F3.2|fail|①|fail|B-2|数据中心表仅模型知识|无数字
+G1|fail|①|pass||候选池仅模型知识|5个候选数字
+G2|fail|①|fail|B-2|仅模型知识|无数字
+G3|pass||fail|B-2a|价格有命名定价页(B)|外部价格无可定位来源
+G4|fail|①|fail|B-2|权限表仅模型知识|无数字
+G5|fail|①|fail|B-2|区域表仅模型知识|无数字
+G6|fail|①|pass||SSO表仅模型知识|30人数字
+Gap G1|fail|①|pass||抽取噪声:同G1|5个候选数字
+Gap G2|fail|①|fail|B-2|抽取噪声:同G2|无数字
+Gap G3|pass||fail|B-2a|抽取噪声:同G3(B)|外部价格无可定位来源
+Gap G5|fail|①|fail|B-2|抽取噪声:同G5|无数字
+Gap G6|fail|①|pass||抽取噪声:同G6|30人数字

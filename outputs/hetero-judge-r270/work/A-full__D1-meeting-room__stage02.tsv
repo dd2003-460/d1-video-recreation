@@ -1,0 +1,45 @@
+A1|pass||fail|B-2|厂商规格未实抓;有对象|无数字
+A2|pass||fail|B-2|B级未实抓;有对象|无数字
+A3|pass||fail|B-2|B级未实抓;有Webhook对象|无数字
+A4|fail|①|fail|B-2a|价格线索无指向|$21.99无来源
+A5|fail|①|fail|B-2|中国区无指向|无数字
+B1|pass||fail|B-2|B级未实抓;有对象|无数字
+B2|pass||fail|B-2|B级未实抓;高不确定保留|无数字
+B3|pass||fail|B-2|B级未实抓;有对象|无数字
+B4|fail|①|fail|B-2a|价格线索无指向|$16无来源
+B5|fail|①|fail|B-2|无指向|无数字
+C1|pass||fail|B-2|B级未实抓;有平台对象|无数字
+C2|pass||fail|B-2|B级未实抓;关键缺口保留|无数字
+C3|pass||fail|B-2|B级未实抓;有门禁厂商对象|无数字
+C4|fail|①|fail|B-2a|价格线索无指向|0-5000 CNY无来源
+C5|fail|①|fail|B-2|无指向|无数字
+D1|pass||fail|B-2|B级未实抓;有平台对象|无数字
+D2|pass||fail|B-2|B级未实抓;关键缺口保留|无数字
+D3|pass||fail|B-2|B级未实抓;有IoT对象|无数字
+D4|fail|①|fail|B-2a|价格线索无指向|200-400 CNY无来源
+D5|fail|①|fail|B-2|无指向|无数字
+E1|fail|②|fail|B-2|B级但无具体对象|无数字
+E2|pass||fail|B-2|B级未实抓;关键缺口保留|无数字
+E3|pass||fail|B-2|B级未实抓;有产品名;保留|无数字
+E4|fail|①|fail|B-2a|价格线索无指向|500-1000无来源
+F1|pass||fail|B-2|B级未实抓;有Docker对象|无数字
+F2|pass||fail|B-2|B级未实抓;有协议对象;保留|无数字
+F3|fail|②|fail|B-2|B级但无具体对象|无数字
+F4|fail|①|fail|B-2a|假设时薪;服务器费无指向|服务器约2000无来源
+G1|fail|①|fail|B-2|无指向|无数字
+G2|fail|①|fail|B-2|无指向;解决方案有保留|无数字
+G3|fail|①|fail|B-2a|无指向|价格区间无来源
+G4|fail|①|fail|B-2a|无指向|14-30天试用无来源
+G5|fail|③|fail|B-2|B级开放平台文档;无跟进|无数字
+G6|fail|①|pass||假设估算无指向;有保留|内部估算数字
+G7|fail|①|fail|B-2|假设值;无指向|无数字
+G8|fail|①|pass||假设值无指向;有保留|假设5-8间数字
+Gap Closure|fail|①|fail|B-2|抽取噪声:标题词|无数字
+P-A|fail|①|fail|B-2a|决定性价格无指向|$21.99无来源
+P-B|fail|①|fail|B-2a|决定性价格无指向|$16无来源
+P-C|fail|①|fail|B-2a|决定性价格无指向|0-5000无来源
+P-D|fail|①|fail|B-2a|决定性价格无指向|6000-12000无来源
+P-E|fail|①|fail|B-2a|决定性价格无指向|500-1000无来源
+P-F|fail|①|fail|B-2a|时薪/服务器无指向|服务器约2000无来源
+Z1|fail|③|fail|B-2|来源1为B级官网帮助中心;无跟进|无数字
+Z2|fail|①,②,③|fail|B-2|来源2段落为空(截断)|无数字

@@ -1,0 +1,31 @@
+C1|fail|①|fail|B-2|无来源仅产品名|无数字无来源
+C2|fail|①|fail|B-2|无来源仅产品名|无数字无来源
+C3|fail|①|pass||无来源;有对象|含2万预算数字
+C4|fail|①|fail|B-2|无来源仅产品名|无数字无来源
+F1|fail|①|fail|B-2|无来源|无数字无来源
+F1.1|fail|①|fail|B-2|无来源;有对象|无数字无来源
+F1.2|fail|①|pass||无来源;有对象|含30人数字
+F1.3|fail|①|fail|B-2|无来源;有产品对象|无数字无来源
+F2|fail|①|fail|B-2|无来源|无数字
+F2.1|fail|①|pass||无来源;有对象|含2万/667元数字
+F2.2|fail|①|fail|B-2|无来源|无数字字段
+F3|fail|①|pass||无来源|含20000预算数字
+F3.1|fail|①|pass||无来源|含数字可推导
+F3.2|fail|①|fail|B-2|无来源|无数字
+F4|fail|①|fail|B-2|无来源|无数字
+F4.1|fail|①|fail|B-2|无来源;保留不确定|无数字
+F4.2|fail|①|fail|B-2|无来源|无数字
+G1|fail|①|fail|B-2|无来源;有研究动作|无数字
+G2|fail|①|pass||无来源;有对象|指向官方文档章节
+G3|fail|①|pass||无来源|含30 users数字
+G4|fail|①|pass||无来源|指向官网Free Trial元素
+G5|fail|①|pass||无来源|指向Developer Docs
+G6|fail|①|fail|B-2|无来源|无数字
+G7|fail|①|fail|B-2|无来源|无数字
+G8|fail|①|pass||无来源|含5间数字(假设)
+Gap List|fail|①|fail|B-2|抽取噪声:标题词|无数字
+P0|fail|①|pass||无来源;有对象|含3-5个数字
+P1|fail|①|fail|B-2|无来源|无数字
+P2|fail|①|fail|B-2|无来源|无数字
+P3|fail|①|fail|B-2|无来源|无数字
+P4|fail|①|fail|B-2|无来源|无数字
